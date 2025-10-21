@@ -1,2 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn {
+  @apply font-['Raleway'];
+}
+
+.btn,
+a.nav-link {
+  @apply text-base font-semibold;
+}
+
+a.nav-link {
+  @apply capitalize rounded-none bg-transparent py-0.5 px-0;
+}
+
+a.nav-link:hover,
+a.nav-link.active {
+  @apply text-neutral border-b-2;
+}

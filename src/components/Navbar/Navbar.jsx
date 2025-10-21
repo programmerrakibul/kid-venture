@@ -3,18 +3,16 @@ import Container from "../Container/Container";
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
-  const navLinks = ["home", "my profile", "explore toys", "sellers"].map(
-    (item) => (
-      <li key={item}>
-        <NavLink
-          to={item === "home" ? "/" : item.replace(" ", "-")}
-          className="capitalize"
-        >
-          {item}
-        </NavLink>
-      </li>
-    )
-  );
+  const navLinks = ["home", "my profile", "explore toys"].map((item) => (
+    <li key={item}>
+      <NavLink
+        to={item === "home" ? "/" : item.replace(" ", "-")}
+        className="nav-link"
+      >
+        {item}
+      </NavLink>
+    </li>
+  ));
 
   return (
     <nav className="bg-base-100 shadow-sm">
@@ -36,12 +34,15 @@ const Navbar = () => {
                 {navLinks}
               </ul>
             </div>
-            <Link to="/" className="text-xl font-bold">
+            <Link
+              to="/"
+              className="text-2xl text-neutral font-extrabold font-['Raleway']"
+            >
               KidVenture
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+            <ul className="menu menu-horizontal px-1 gap-5">{navLinks}</ul>
           </div>
           <div className="navbar-end gap-3.5">
             <button className="btn btn-primary">SignIn</button>

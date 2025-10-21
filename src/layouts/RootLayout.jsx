@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
   return (
@@ -7,10 +8,10 @@ const RootLayout = () => {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="min-h-[calc(100vh-284px)] space-y-16">
         <Outlet />
       </main>
-      <footer>This is Footer</footer>
+      <Footer />
     </>
   );
 };
