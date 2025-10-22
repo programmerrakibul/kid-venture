@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
+import getAuthErrorMessage from "../../utilities/getErrorMessage";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const { signInWithPassword, signInWithGoogle } = useAuth();
@@ -19,9 +21,11 @@ const SignIn = () => {
 
     try {
       await signInWithPassword(email, password);
+      form.reset();
       navigate(state ? state : "/");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getAuthErrorMessage(error.code);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -32,7 +36,8 @@ const SignIn = () => {
       await signInWithGoogle();
       navigate(state ? state : "/");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getAuthErrorMessage(error.code);
+      toast.error(errorMessage);
     }
   };
 

@@ -3,6 +3,8 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import Container from "../../components/Container/Container";
 import { FcGoogle } from "react-icons/fc";
+import getAuthErrorMessage from "../../utilities/getErrorMessage";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
@@ -18,17 +20,39 @@ const SignUp = () => {
     const photoURL = form.photo_url.value;
     const email = form.email.value;
     const password = form.password.value;
-    // const newPassword = form.newPassword.value;
+
+    const validatePassLen = /^.{6,}$/;
+    const validatePassUpper = /[A-Z]/;
+    const validatePassLower = /[a-z]/;
+
+    if (!validatePassLen.test(password)) {
+      toast.warn("Password must be at least 6 characters long.");
+      setLoading(false);
+      return;
+    }
+
+    if (!validatePassUpper.test(password)) {
+      toast.warn("Password must contain at least one uppercase letter.");
+      setLoading(false);
+      return;
+    }
+
+    if (!validatePassLower.test(password)) {
+      toast.warn("Password must contain at least one lowercase letter.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const userCredential = await createUser(email, password);
       const user = userCredential.user;
       await updateUserProfile({ ...user, displayName, photoURL });
-      console.log(user);
 
+      form.reset();
       navigate("/");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getAuthErrorMessage(error.code);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -39,7 +63,8 @@ const SignUp = () => {
       await signInWithGoogle();
       navigate("/");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getAuthErrorMessage(error.code);
+      toast.error(errorMessage);
     }
   };
 
@@ -66,17 +91,6 @@ const SignUp = () => {
               </div>
 
               <div>
-                <label className="label">Photo URL</label>
-                <input
-                  type="text"
-                  name="photo_url"
-                  className="input"
-                  placeholder="Photo URL"
-                  required
-                />
-              </div>
-
-              <div>
                 <label className="label">Email</label>
                 <input
                   type="email"
@@ -88,12 +102,12 @@ const SignUp = () => {
               </div>
 
               <div>
-                <label className="label">Password</label>
+                <label className="label">Photo URL</label>
                 <input
-                  type="password"
-                  name="password"
+                  type="text"
+                  name="photo_url"
                   className="input"
-                  placeholder="Password"
+                  placeholder="Photo URL"
                   required
                 />
               </div>
@@ -102,9 +116,9 @@ const SignUp = () => {
                 <label className="label">Password</label>
                 <input
                   type="password"
-                  name="newPassword"
+                  name="password"
                   className="input"
-                  placeholder="New Password"
+                  placeholder="Password"
                   required
                 />
               </div>

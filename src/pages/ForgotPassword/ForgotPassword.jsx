@@ -2,6 +2,8 @@ import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import getAuthErrorMessage from "../../utilities/getErrorMessage";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
@@ -14,9 +16,12 @@ const ForgotPassword = () => {
 
     try {
       await sendResetEmail(email);
-      console.log("Reset mail send");
+      toast.success("Reset mail successfully send!");
+      // e.currentTarget.reset();
+      window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getAuthErrorMessage(error.code);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -37,7 +42,10 @@ const ForgotPassword = () => {
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
               <div>
-                <label htmlFor="email" className="label text-neutral font-semibold">
+                <label
+                  htmlFor="email"
+                  className="label text-neutral font-semibold"
+                >
                   Email
                 </label>
                 <input
@@ -56,10 +64,7 @@ const ForgotPassword = () => {
             </fieldset>
 
             <div>
-              <Link
-                to={-1}
-                className="link link-hover font-medium"
-              >
+              <Link to={-1} className="link link-hover font-medium">
                 <FaArrowLeftLong className="inline-block mr-2" />
                 Go Back
               </Link>
