@@ -2,9 +2,10 @@ import { Link, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import Container from "../../components/Container/Container";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUp = () => {
-  const { createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -30,6 +31,15 @@ const SignUp = () => {
       console.log(error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSignInWithGoogle = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/");
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -112,6 +122,16 @@ const SignUp = () => {
                 </Link>
               </p>
             </fieldset>
+
+            <div className="divider">OR</div>
+
+            <button
+              onClick={handleSignInWithGoogle}
+              type="button"
+              className="btn btn-ghost bg-white text-black border-[#e5e5e5]"
+            >
+              <FcGoogle size={18} /> Login with Google
+            </button>
           </form>
         </div>
       </section>

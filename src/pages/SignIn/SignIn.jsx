@@ -46,7 +46,7 @@ const SignIn = () => {
             className="card-body space-y-3.5"
           >
             <h1 className="text-xl font-semibold text-black text-center">
-              SignIn your account
+              SignIn to your account
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
               <div>
