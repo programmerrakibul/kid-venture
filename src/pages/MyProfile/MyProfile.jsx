@@ -4,7 +4,6 @@ import useAuth from "../../hooks/useAuth";
 const MyProfile = () => {
   const { currentUser } = useAuth();
   const { displayName, photoURL, email } = currentUser;
-  console.log(currentUser);
 
   return (
     <>
@@ -23,21 +22,19 @@ const MyProfile = () => {
             <div className="border-t border-gray-200 px-4 py-5 sm:p-0 mt-24">
               <dl className="sm:divide-y sm:divide-gray-200">
                 <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Full name
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  <p className="text-sm font-medium text-gray-500">Full Name</p>
+                  <p className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     {displayName}
-                  </dd>
+                  </p>
                 </div>
 
                 <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Email address
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  <p className="text-sm font-medium text-gray-500">
+                    Email Address
+                  </p>
+                  <p className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     {email}
-                  </dd>
+                  </p>
                 </div>
               </dl>
             </div>

@@ -37,11 +37,12 @@ const SignUp = () => {
     <>
       <title>Sign Up</title>
       <section className="min-h-[calc(100vh-284px)] my-16">
-        <Container className="card bg-base-100 w-full h-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full h-full max-w-sm mx-auto shrink-0 shadow-2xl">
           <form onSubmit={handleSignIn} className="card-body space-y-3.5">
             <h1 className="text-xl font-semibold text-black text-center">
               Create your account
             </h1>
+
             <fieldset className="fieldset gap-2.5 text-base">
               <div>
                 <label className="label">Name</label>
@@ -50,6 +51,7 @@ const SignUp = () => {
                   name="name"
                   className="input"
                   placeholder="Name"
+                  required
                 />
               </div>
 
@@ -60,6 +62,7 @@ const SignUp = () => {
                   name="photo_url"
                   className="input"
                   placeholder="Photo URL"
+                  required
                 />
               </div>
 
@@ -70,6 +73,7 @@ const SignUp = () => {
                   name="email"
                   className="input"
                   placeholder="Email"
+                  required
                 />
               </div>
 
@@ -80,6 +84,7 @@ const SignUp = () => {
                   name="password"
                   className="input"
                   placeholder="Password"
+                  required
                 />
               </div>
 
@@ -90,6 +95,7 @@ const SignUp = () => {
                   name="newPassword"
                   className="input"
                   placeholder="New Password"
+                  required
                 />
               </div>
 
@@ -97,14 +103,17 @@ const SignUp = () => {
                 {loading ? "Signing Up..." : "SignUp"}
               </button>
               <p className="text-center">
-                Already have an account?{" "}
-                <Link to="../login" className="link link-hover text-secondary">
-                  Login
+                Already have an account?
+                <Link
+                  to="/signin"
+                  className="link link-hover text-secondary ml-1.5"
+                >
+                  SignIn
                 </Link>
               </p>
             </fieldset>
           </form>
-        </Container>
+        </div>
       </section>
     </>
   );

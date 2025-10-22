@@ -6,6 +6,7 @@ import ExploreToys from "../pages/ExploreToys/ExploreToys";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -18,16 +19,26 @@ const router = createBrowserRouter([
       },
       {
         path: "my-profile",
-        element: <MyProfile />,
+        element: (
+          <ProtectedRoute>
+            <MyProfile />
+          </ProtectedRoute>
+        ),
       },
+      {
+        path: "toy-details/:name",
+        element: (
+          <ProtectedRoute>
+            <ToyDetails />
+          </ProtectedRoute>
+        ),
+      },
+
       {
         path: "explore-toys",
         element: <ExploreToys />,
       },
-      {
-        path: "toy-details/:name",
-        element: <ToyDetails />,
-      },
+
       {
         path: "signup",
         element: <SignUp />,

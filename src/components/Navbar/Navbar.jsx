@@ -73,6 +73,23 @@ const Navbar = () => {
               </>
             ) : (
               <>
+                <div className="relative group">
+                  <div className="avatar">
+                    <div className="ring-primary ring-offset-base-100 size-10 rounded-full ring-2 bg-primary-content">
+                      <img
+                        src={currentUser.photoURL}
+                        alt={currentUser.displayName}
+                      />
+                    </div>
+                  </div>
+                  <p
+                    tabIndex={0}
+                    className="absolute top-14 group-hover:top-12 -right-6 bg-primary-content text-primary text-nowrap px-3 py-1.5 rounded-lg shadow-2xl invisible duration-300 group-hover:visible font-medium"
+                  >
+                    {currentUser.displayName}
+                  </p>
+                </div>
+
                 <button onClick={handleSignOut} className="btn btn-secondary">
                   SignOut
                 </button>
