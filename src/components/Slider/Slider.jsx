@@ -19,10 +19,10 @@ const Slider = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
@@ -34,7 +34,11 @@ const Slider = () => {
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="w-full relative max-h-[480px] rounded-lg overflow-hidden">
-              <img src={item.imageURL} alt="" />
+              <img
+                src={item.imageURL}
+                alt={`Slider Image ${item.id}`}
+                className="w-full"
+              />
               <div className="absolute top-0 left-0 w-full h-full bg-[#11111186] grid place-items-center backdrop-blur-[2px]">
                 <div className="text-primary-content text-center space-y-3.5 max-w-2xl">
                   <h1 className="font-extrabold text-5xl">{item.title}</h1>
