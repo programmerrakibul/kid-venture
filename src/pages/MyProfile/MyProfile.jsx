@@ -34,7 +34,7 @@ const MyProfile = () => {
       <title>My Profile</title>
       <section className="my-10">
         <Container className="grid place-items-center w-full min-h-[420px]">
-          <div className="bg-white max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
+          <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
             <div className="absolute -top-7 left-[50%] -translate-x-[50%]">
               <div className="avatar">
                 <div className="ring-primary ring-offset-base-100 size-24 rounded-full ring-2 bg-primary-content">
@@ -46,14 +46,18 @@ const MyProfile = () => {
             <div className="border-t border-gray-200 px-4 py-5 sm:p-0 mt-24">
               <div className="sm:divide-y sm:divide-gray-200">
                 <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <p className="font-medium text-gray-500">Full Name</p>
+                  <p className="font-semibold font-['Raleway'] text-neutral text-lg">
+                    Full Name:
+                  </p>
                   <p className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
                     {displayName}
                   </p>
                 </div>
 
                 <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <p className="font-medium text-gray-500">Email Address</p>
+                  <p className="font-semibold font-['Raleway'] text-neutral text-lg">
+                    Email Address:
+                  </p>
                   <p className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
                     {email}
                   </p>
@@ -62,8 +66,8 @@ const MyProfile = () => {
                 <div className="collapse py-3 sm:py-5 sm:px-6">
                   <input type="checkbox" />
 
-                  <div className="collapse-title font-semibold p-0">
-                    Want to update your info?
+                  <div className="collapse-title p-0 font-semibold font-['Raleway'] text-secondary">
+                    Want to update your profile info?
                   </div>
 
                   <form
