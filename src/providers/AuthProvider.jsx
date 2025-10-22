@@ -60,6 +60,7 @@ const AuthProvider = ({ children }) => {
     SignOutUser,
     signInWithGoogle,
     sendResetEmail,
+    setCurrentUser,
   };
   return (
     <AuthContext value={authData}>

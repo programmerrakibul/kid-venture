@@ -7,6 +7,7 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
 import ProtectedRoute from "./ProtectedRoute";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "signin",
         element: <SignIn />,
+      },
+      {
+        path: "reset-password",
+        element: <ForgotPassword />,
       },
     ],
   },

@@ -39,8 +39,8 @@ const SignIn = () => {
   return (
     <>
       <title>Sign In</title>
-      <section className="min-h-[calc(100vh-284px)] my-16">
-        <div className="card bg-base-100 w-full h-full max-w-sm mx-auto shrink-0 shadow-2xl">
+      <section className="min-h-[420px] my-16 px-5 grid place-items-center">
+        <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
             onSubmit={handleSignInWithPassword}
             className="card-body space-y-3.5"
@@ -77,7 +77,7 @@ const SignIn = () => {
                 />
               </div>
               <div>
-                <Link className="link link-hover text-sm">
+                <Link to="/reset-password" className="link link-hover text-sm">
                   Forgot Password?
                 </Link>
               </div>
