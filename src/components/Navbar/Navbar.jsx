@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
   const navLinks = ["home", "my profile", "explore toys"].map((item) => (
     <li key={item}>
@@ -16,6 +16,14 @@ const Navbar = () => {
       </NavLink>
     </li>
   ));
+
+  const handleSignOut = async () => {
+    try {
+      await SignOutUser();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <nav className="bg-base-100 shadow-sm">
@@ -65,7 +73,9 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <button className="btn btn-secondary">SignOut</button>
+                <button onClick={handleSignOut} className="btn btn-secondary">
+                  SignOut
+                </button>
               </>
             )}
           </div>
