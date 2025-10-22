@@ -4,10 +4,12 @@ import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
+import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 
 const SignIn = () => {
   const { signInWithPassword, signInWithGoogle } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -68,18 +70,25 @@ const SignIn = () => {
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <label htmlFor="password" className="label">
                   Password
                 </label>
                 <input
                   id="password"
-                  type="password"
+                  type={show ? "text" : "password"}
                   name="password"
                   className="input"
                   placeholder="Password"
                   required
                 />
+
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute top-9 right-4 text-xl z-10"
+                >
+                  {show ? <IoIosEyeOff /> : <IoMdEye />}
+                </span>
               </div>
               <div>
                 <Link to="/reset-password" className="link link-hover text-sm">

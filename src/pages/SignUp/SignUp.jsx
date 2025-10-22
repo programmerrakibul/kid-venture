@@ -5,10 +5,12 @@ import Container from "../../components/Container/Container";
 import { FcGoogle } from "react-icons/fc";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
+import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
@@ -112,15 +114,21 @@ const SignUp = () => {
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <label className="label">Password</label>
                 <input
-                  type="password"
+                  type={show ? "text" : "password"}
                   name="password"
                   className="input"
                   placeholder="Password"
                   required
                 />
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute top-9 right-4 text-xl z-10"
+                >
+                  {show ? <IoIosEyeOff /> : <IoMdEye />}
+                </span>
               </div>
 
               <button disabled={loading} className="btn btn-primary mt-4">
