@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router";
 import Container from "../../components/Container/Container";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const ToyDetails = () => {
   const navigate = useNavigate();
@@ -20,10 +21,18 @@ const ToyDetails = () => {
 
   const inStock = availableQuantity > 0;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.currentTarget.name.value;
+
+    toast.success(`Thank you, ${name}! We've received your request`);
+  };
+
   return (
     <>
       <title>{toyName}</title>
-      <section className="my-10">
+
+      <section className="mt-10">
         <Container className="space-y-3.5">
           <button
             onClick={() => navigate(-1)}
@@ -86,6 +95,45 @@ const ToyDetails = () => {
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="mb-10 bg-slate-200 py-7">
+        <Container className="grid place-items-center">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 max-w-lg w-full bg-slate-300 p-5 rounded-lg shadow-lg shadow-indigo-200"
+          >
+            <div className="form-control">
+              <label className="label font-semibold text-primary">
+                Your Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                className="input bg-indigo-100 outline-indigo-400"
+                required
+              />
+            </div>
+
+            <div className="form-control">
+              <label className="label font-semibold text-primary">
+                Email Address
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="input bg-indigo-100 outline-indigo-400"
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary w-full mt-6">
+              Try Now
+            </button>
+          </form>
         </Container>
       </section>
     </>
