@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css";
 import { useNavigate } from "react-router";
 import { sliderData } from "../../utilities/sliderData";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Slider = () => {
   const navigate = useNavigate();
@@ -19,17 +20,16 @@ const Slider = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        // className="mySwiper"
       >
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
@@ -45,9 +45,10 @@ const Slider = () => {
                   <p>{item.subtitle}</p>
                   <button
                     onClick={() => navigate("explore-toys")}
-                    className="btn btn-accent text-white"
+                    className="btn btn-accent text-white group"
                   >
-                    Explore Toys
+                    Explore Toys{" "}
+                    <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
                   </button>
                 </div>
               </div>
