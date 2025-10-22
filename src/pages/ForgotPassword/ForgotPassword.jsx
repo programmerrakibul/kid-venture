@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
+import ForgetEmailContext from "../../contexts/ForgetEmailContext";
 
 const ForgotPassword = () => {
+  const { forgetEmail } = useContext(ForgetEmailContext);
   const [loading, setLoading] = useState(false);
   const { sendResetEmail } = useAuth();
 
@@ -52,6 +54,7 @@ const ForgotPassword = () => {
                   id="email"
                   type="email"
                   name="email"
+                  defaultValue={forgetEmail}
                   className="input"
                   placeholder="Email"
                   required

@@ -1,13 +1,15 @@
 import { Link, useLocation, useNavigate } from "react-router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
+import ForgetEmailContext from "../../contexts/ForgetEmailContext";
 
 const SignIn = () => {
   const { signInWithPassword, signInWithGoogle } = useAuth();
+  const { setForgetEmail } = useContext(ForgetEmailContext);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const { state } = useLocation();
@@ -64,6 +66,7 @@ const SignIn = () => {
                   id="email"
                   type="email"
                   name="email"
+                  onChange={(e) => setForgetEmail(e.target.value)}
                   className="input"
                   placeholder="Email"
                   required
