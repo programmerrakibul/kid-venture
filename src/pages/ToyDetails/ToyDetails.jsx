@@ -1,8 +1,10 @@
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import Container from "../../components/Container/Container";
 import { FaStar } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const ToyDetails = () => {
+  const navigate = useNavigate();
   const { state: singleToy } = useLocation();
   const {
     pictureURL,
@@ -22,7 +24,13 @@ const ToyDetails = () => {
     <>
       <title>{toyName}</title>
       <section className="my-10">
-        <Container>
+        <Container className="space-y-3.5">
+          <button
+            onClick={() => navigate(-1)}
+            className="link link-hover font-semibold text-secondary"
+          >
+            <FaArrowLeftLong className="inline-block mr-1" /> Go Back
+          </button>
           <div className="flex flex-col md:flex-row gap-7 border-primary-content shadow-lg rounded-xl border-2 overflow-hidden bg-indigo-100">
             <img className="flex-1/4" src={pictureURL} alt={toyName} />
             <div className="p-5 flex-3/4 text-[#807b7b] space-y-4">

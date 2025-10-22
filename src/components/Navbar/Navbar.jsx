@@ -64,12 +64,6 @@ const Navbar = () => {
                 >
                   SignIn
                 </button>
-                <button
-                  onClick={() => navigate("signup")}
-                  className="btn btn-primary"
-                >
-                  SignUp
-                </button>
               </>
             ) : (
               <>

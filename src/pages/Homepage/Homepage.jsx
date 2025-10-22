@@ -59,7 +59,7 @@ const Homepage = () => {
         </Container>
       </section>
 
-      <section className="py-16 bg-slate-200 mb-10">
+      <section className="py-16 bg-slate-200">
         <Container className="space-y-5">
           <div className="text-center space-y-3.5">
             <Title className="text-primary">Why Choose Us</Title>
