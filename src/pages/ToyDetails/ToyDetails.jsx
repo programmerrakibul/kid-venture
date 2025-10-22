@@ -23,7 +23,7 @@ const ToyDetails = () => {
       <title>{toyName}</title>
       <section className="my-10">
         <Container>
-          <div className="flex flex-col md:flex-row gap-7 border-gray-300 shadow-lg rounded-xl border-2 overflow-hidden bg-indigo-100">
+          <div className="flex flex-col md:flex-row gap-7 border-primary-content shadow-lg rounded-xl border-2 overflow-hidden bg-indigo-100">
             <img className="flex-1/4" src={pictureURL} alt={toyName} />
             <div className="p-5 flex-3/4 text-[#807b7b] space-y-4">
               <div className="flex gap-5 items-center">

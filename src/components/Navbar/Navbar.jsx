@@ -1,8 +1,11 @@
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Container from "../Container/Container";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
   const navLinks = ["home", "my profile", "explore toys"].map((item) => (
     <li key={item}>
       <NavLink
@@ -45,8 +48,26 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 gap-5">{navLinks}</ul>
           </div>
           <div className="navbar-end gap-3.5">
-            <button className="btn btn-primary">SignIn</button>
-            <button className="btn btn-primary">SignUp</button>
+            {!currentUser ? (
+              <>
+                <button
+                  onClick={() => navigate("signin")}
+                  className="btn btn-primary"
+                >
+                  SignIn
+                </button>
+                <button
+                  onClick={() => navigate("signup")}
+                  className="btn btn-primary"
+                >
+                  SignUp
+                </button>
+              </>
+            ) : (
+              <>
+                <button className="btn btn-secondary">SignOut</button>
+              </>
+            )}
           </div>
         </div>
       </Container>

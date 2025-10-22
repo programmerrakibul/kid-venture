@@ -1,4 +1,5 @@
 import Container from "../../components/Container/Container";
+import Title from "../../components/Title/Title";
 import ToyCard from "../../components/ToyCard/ToyCard";
 import useToysData from "../../hooks/useToysData";
 
@@ -13,7 +14,7 @@ const Homepage = () => {
   return (
     <section>
       <Container className="space-y-7">
-        <h3 className="font-bold text-3xl text-neutral">Popular Toys</h3>
+        <Title>Popular Toys</Title>
         <div className="grid md:grid-cols-3 gap-7">{cardElements}</div>
       </Container>
     </section>

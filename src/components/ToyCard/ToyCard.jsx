@@ -1,16 +1,20 @@
 import { FaStar } from "react-icons/fa";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const ToyCard = ({ singleToy }) => {
-  const { pictureURL, toyName, rating, availableQuantity, price } = singleToy;
   const navigate = useNavigate();
-  const path = `toy-details/${toyName
+  const { pathname } = useLocation();
+
+  const { pictureURL, toyName, rating, availableQuantity, price, isPopular } =
+    singleToy;
+
+  const path = `/toy-details/${toyName
     .toLowerCase()
     .replaceAll(" ", "-")
     .replaceAll(".", "")}`;
 
   return (
-    <div className="card bg-base-100 shadow-sm">
+    <div className="card bg-base-100 shadow-sm hover:shadow-2xl hover:shadow-teal-200 duration-300">
       <figure>
         <img
           src={pictureURL}
@@ -21,11 +25,16 @@ const ToyCard = ({ singleToy }) => {
       <div className="card-body text-base">
         <h2 className="card-title text-neutral/80">
           {toyName}
-          <div className="badge badge-secondary">NEW</div>
+
+          {isPopular && pathname === "/explore-toys" && (
+            <span className="badge badge-success text-success-content">
+              Popular
+            </span>
+          )}
         </h2>
         <div className="space-y-2">
           <p className="flex items-center justify-between font-medium">
-            <span>৳ {price}</span>
+            <span>৳{price}</span>
             <span className="flex items-center gap-1.5">
               <FaStar fill="#FF8A00" size={18} /> {rating}
             </span>
