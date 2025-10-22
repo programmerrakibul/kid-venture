@@ -9,6 +9,7 @@ import { SiAdguard } from "react-icons/si";
 import { LuHandshake } from "react-icons/lu";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useNavigate } from "react-router";
+import Slider from "../../components/Slider/Slider";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -35,6 +36,12 @@ const Homepage = () => {
 
   return (
     <>
+      <section className="mt-10">
+        <Container>
+          <Slider />
+        </Container>
+      </section>
+
       <section>
         <Container className="space-y-7">
           <Title>Popular Toys</Title>
@@ -88,6 +95,7 @@ const Homepage = () => {
                 </p>
               </div>
             </div>
+
             <div className="card bg-base-200 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               <div className="card-body items-center text-center gap-3.5">
                 <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">

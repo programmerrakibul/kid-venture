@@ -30,3 +30,11 @@ a.nav-link.active {
 .input {
   @apply w-full;
 }
+
+.swiper-navigation-icon {
+  @apply text-accent;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-accent!;
+}
