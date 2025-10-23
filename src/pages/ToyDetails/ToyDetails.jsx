@@ -3,8 +3,10 @@ import Container from "../../components/Container/Container";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const ToyDetails = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { state: singleToy } = useLocation();
   const {
@@ -23,8 +25,11 @@ const ToyDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     const name = e.currentTarget.name.value;
 
+    setLoading(false);
+    e.currentTarget.reset();
     toast.success(`Thank you, ${name}! We've received your request`);
   };
 
@@ -33,54 +38,60 @@ const ToyDetails = () => {
       <title>{toyName}</title>
 
       <section className="mt-10">
-        <Container className="space-y-3.5">
-          <button
-            onClick={() => navigate(-1)}
-            className="link link-hover font-semibold text-secondary"
-          >
-            <FaArrowLeftLong className="inline-block mr-1" /> Go Back
-          </button>
-          <div className="flex flex-col md:flex-row gap-7 border-primary-content shadow-lg rounded-xl border-2 overflow-hidden bg-indigo-100">
-            <img className="flex-1/4" src={pictureURL} alt={toyName} />
-            <div className="p-5 flex-3/4 text-[#807b7b] space-y-4">
-              <div className="flex gap-5 items-center">
-                <h1 className="text-3xl font-semibold text-neutral">
-                  {toyName}
-                </h1>
-
-                <span
-                  className={`${
-                    inStock
-                      ? "text-green-700 bg-green-200"
-                      : "text-red-700 bg-red-200"
-                  } px-5 py-1 font-semibold rounded-full text-nowrap`}
-                >
-                  {inStock ? "In Stock" : "Out Of Stock"}
-                </span>
+        <Container>
+          <div className="space-y-3.5 bg-indigo-100 border-primary-content shadow-lg rounded-xl border-2 p-5">
+            <button
+              onClick={() => navigate(-1)}
+              className="link link-hover font-semibold text-secondary"
+            >
+              <FaArrowLeftLong className="inline-block mr-1" /> Go Back
+            </button>
+            <div className="flex flex-col sm:flex-row gap-7">
+              <div className="flex-1/3 grid place-items-center shadow-md rounded-xl overflow-hidden">
+                <img src={pictureURL} className="w-full" alt={toyName} />
               </div>
 
-              <div className="flex items-center justify-between">
-                <p>
-                  <strong className="text-neutral">Available Items: </strong>
-                  {availableQuantity}
-                </p>
+              <div className="flex-2/3 text-[#807b7b] space-y-4">
+                <div className="flex gap-5 items-center">
+                  <h1 className="text-xl md:text-3xl font-semibold text-neutral">
+                    {toyName}
+                  </h1>
 
-                <p className="flex items-center gap-1.5">
-                  <strong className="text-neutral">Rating:</strong>
-                  <span className="flex items-center gap-1.5">
-                    <FaStar fill="#FF8A00" size={18} /> {rating}
+                  <span
+                    className={`${
+                      inStock
+                        ? "text-green-700 bg-green-200"
+                        : "text-red-700 bg-red-200"
+                    } px-5 py-1 font-semibold rounded-full text-nowrap`}
+                  >
+                    {inStock ? "In Stock" : "Out Of Stock"}
                   </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <p>
+                    <strong className="text-neutral">Available Items: </strong>
+                    {availableQuantity}
+                  </p>
+
+                  <p className="flex items-center gap-1.5">
+                    <strong className="text-neutral">Rating:</strong>
+                    <span className="flex items-center gap-1.5">
+                      <FaStar fill="#FF8A00" size={18} /> {rating}
+                    </span>
+                  </p>
+                </div>
+
+                <p>
+                  <strong className="text-neutral">Category: </strong>
+                  {subCategory}
                 </p>
+
+                <p className="text-[#2c732f] text-2xl font-medium">৳{price}</p>
               </div>
-
-              <p className="text-[#2c732f] text-2xl font-medium">৳{price}</p>
-
+            </div>
+            <div className="space-y-3.5">
               <p>{description}</p>
-
-              <p>
-                <strong className="text-neutral">Category: </strong>
-                {subCategory}
-              </p>
 
               <div className="bg-teal-100 space-y-3.5 p-4 rounded-2xl">
                 <p>
@@ -93,7 +104,7 @@ const ToyDetails = () => {
                   {sellerEmail}
                 </p>
               </div>
-            </div>
+            </div>{" "}
           </div>
         </Container>
       </section>
@@ -104,7 +115,7 @@ const ToyDetails = () => {
             onSubmit={handleSubmit}
             className="space-y-4 max-w-lg w-full bg-slate-300 p-5 rounded-lg shadow-lg shadow-indigo-200"
           >
-            <div className="form-control">
+            <div className="space-y-1">
               <label className="label font-semibold text-primary">
                 Your Name
               </label>
@@ -117,7 +128,7 @@ const ToyDetails = () => {
               />
             </div>
 
-            <div className="form-control">
+            <div className="space-y-1">
               <label className="label font-semibold text-primary">
                 Email Address
               </label>
@@ -130,8 +141,12 @@ const ToyDetails = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-full mt-6">
-              Try Now
+            <button
+              disabled={loading}
+              type="submit"
+              className="btn btn-primary w-full mt-6"
+            >
+              {loading ? "Please wait..." : "Try Now"}
             </button>
           </form>
         </Container>
