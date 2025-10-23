@@ -1,5 +1,7 @@
+import { toast } from "react-toastify";
 import Container from "../../components/Container/Container";
 import useAuth from "../../hooks/useAuth";
+import getAuthErrorMessage from "../../utilities/getErrorMessage";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
@@ -25,7 +27,8 @@ const MyProfile = () => {
 
       form.reset();
     } catch (error) {
-      console.log(error);
+      const message = getAuthErrorMessage(error);
+      toast.error(message);
     }
   };
 

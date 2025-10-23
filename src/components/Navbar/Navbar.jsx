@@ -2,6 +2,8 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Container from "../Container/Container";
 import { Link, NavLink, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import getAuthErrorMessage from "../../utilities/getErrorMessage";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
@@ -21,7 +23,8 @@ const Navbar = () => {
     try {
       await SignOutUser();
     } catch (error) {
-      console.log(error);
+      const message = getAuthErrorMessage(error);
+      toast.error(message);
     }
   };
 

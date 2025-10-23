@@ -19,7 +19,7 @@ a.nav-link {
 }
 
 a.nav-link {
-  @apply capitalize rounded-none bg-transparent py-0.5 px-0 border-b-2 border-transparent;
+  @apply capitalize rounded-none bg-transparent py-0.5 px-0 border-b-2 border-transparent w-fit;
 }
 
 a.nav-link:hover,
