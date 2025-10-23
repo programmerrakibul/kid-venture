@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
-  const navLinks = ["home", "my profile", "explore toys", "offers"].map(
+  const navLinks = ["home", "profile", "explore toys", "offers"].map(
     (item) => (
       <li key={item}>
         <NavLink

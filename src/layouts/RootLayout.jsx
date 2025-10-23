@@ -18,7 +18,7 @@ const RootLayout = () => {
         <PageLoader />
       ) : (
         <>
-          <header className="sticky top-0 z-10">
+          <header className="sticky top-0 z-50">
             <Navbar />
           </header>
           <main className="min-h-[calc(100vh-284px)] space-y-16">
