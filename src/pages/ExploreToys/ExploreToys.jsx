@@ -17,7 +17,7 @@ const ExploreToys = () => {
       <section className="my-8">
         <Container className="space-y-5 md:space-y-7">
           <Title className="text-center">All Toys</Title>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7">
             {cardElements}
           </div>
         </Container>
