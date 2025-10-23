@@ -14,7 +14,7 @@ const ToyCard = ({ singleToy }) => {
     .replaceAll(".", "")}`;
 
   return (
-    <div className="card bg-base-100 shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
+    <div className="card bg-secondary/10 border-2 border-primary/20 shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
       <figure>
         <img
           src={pictureURL}
