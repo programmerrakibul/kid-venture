@@ -30,6 +30,7 @@ const Slider = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
+        loop={true}
       >
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
