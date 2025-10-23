@@ -1,10 +1,13 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { offersData } from "../../utilities/offersData";
 import OfferCard from "../../components/OfferCard/OfferCard";
 import Container from "../../components/Container/Container";
 import Title from "../../components/Title/Title";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Offers = () => {
+  const navigate = useNavigate();
+
   const offerCardElements = offersData.map((item) => (
     <OfferCard key={item.id} singleOffer={item} />
   ));
@@ -31,9 +34,13 @@ const Offers = () => {
 
           <p>Browse our full collection of educational toys and games</p>
 
-          <Link to="/explore-toys" className="btn btn-primary">
-            View All Toys
-          </Link>
+          <button
+            onClick={() => navigate("explore-toys")}
+            className="btn btn-primary btn-lg px-8 group"
+          >
+            Explore All Toys
+            <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
+          </button>
         </div>
       </Container>
     </section>
