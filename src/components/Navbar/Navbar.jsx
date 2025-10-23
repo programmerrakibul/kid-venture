@@ -3,22 +3,21 @@ import { Link, NavLink, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
+import Avatar from "../Avatar/Avatar";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
-  const navLinks = ["home", "profile", "explore toys", "offers"].map(
-    (item) => (
-      <li key={item}>
-        <NavLink
-          to={item === "home" ? "/" : item.replace(" ", "-")}
-          className="nav-link"
-        >
-          {item}
-        </NavLink>
-      </li>
-    )
-  );
+  const navLinks = ["home", "profile", "explore toys", "offers"].map((item) => (
+    <li key={item}>
+      <NavLink
+        to={item === "home" ? "/" : item.replace(" ", "-")}
+        className="nav-link"
+      >
+        {item}
+      </NavLink>
+    </li>
+  ));
 
   const handleSignOut = async () => {
     try {
@@ -57,16 +56,14 @@ const Navbar = () => {
             ) : (
               <>
                 <div className="relative group">
-                  <div className="avatar">
-                    <div className="ring-primary ring-offset-base-100 size-8 md:size-10 rounded-full ring-2 bg-primary-content">
-                      <img
-                        src={currentUser.photoURL}
-                        alt={currentUser.displayName}
-                      />
-                    </div>
-                  </div>
+                  <Avatar
+                    src={currentUser.photoURL}
+                    alt={currentUser.displayName}
+                    className={"size-8 md:size-10"}
+                  />
+
                   <p
-                    tabIndex={0}
+                    tabIndex={-1}
                     className="absolute top-14 group-hover:top-12 -right-6 bg-primary-content text-primary text-nowrap px-3 py-1.5 rounded-lg shadow-2xl invisible duration-300 group-hover:visible font-medium"
                   >
                     {currentUser.displayName}

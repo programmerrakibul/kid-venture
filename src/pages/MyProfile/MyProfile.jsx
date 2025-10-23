@@ -3,6 +3,7 @@ import Container from "../../components/Container/Container";
 import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { useState } from "react";
+import Avatar from "../../components/Avatar/Avatar";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
@@ -54,11 +55,7 @@ const MyProfile = () => {
         <Container className="grid place-items-center w-full min-h-[420px]">
           <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
             <div className="absolute -top-7 left-[50%] -translate-x-[50%]">
-              <div className="avatar">
-                <div className="ring-primary ring-offset-base-100 size-24 rounded-full ring-2 bg-primary-content">
-                  <img src={photoURL} alt={displayName} />
-                </div>
-              </div>
+              <Avatar src={photoURL} alt={displayName} className="size-24" />
             </div>
 
             <div className="border-t border-gray-200 px-4 py-5 sm:p-0 mt-24">
