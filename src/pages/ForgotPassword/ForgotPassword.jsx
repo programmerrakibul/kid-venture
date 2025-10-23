@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import ForgetEmailContext from "../../contexts/ForgetEmailContext";
 
 const ForgotPassword = () => {
-  const { forgetEmail } = useContext(ForgetEmailContext);
+  const { forgetEmail, setForgetEmail } = useContext(ForgetEmailContext);
   const [loading, setLoading] = useState(false);
   const { sendResetEmail } = useAuth();
 
@@ -19,11 +19,13 @@ const ForgotPassword = () => {
     try {
       await sendResetEmail(email);
       toast.success("Reset mail successfully send!");
+      setForgetEmail("");
       // e.currentTarget.reset();
       window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -33,7 +35,7 @@ const ForgotPassword = () => {
     <>
       <title>Reset Password</title>
 
-      <section className="min-h-[320px] my-16 px-5 grid place-items-center">
+      <section className="min-h-80 my-16 px-5 grid place-items-center">
         <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
             onSubmit={handleResetPassword}

@@ -13,7 +13,7 @@ const SignUp = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignIn = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -51,6 +51,7 @@ const SignUp = () => {
       await updateUserProfile({ ...user, displayName, photoURL });
 
       form.reset();
+      toast.success("Successfully account created!");
       navigate("/");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
@@ -63,6 +64,7 @@ const SignUp = () => {
   const handleSignInWithGoogle = async () => {
     try {
       await signInWithGoogle();
+      toast.success("Successfully signed in!");
       navigate("/");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
@@ -75,7 +77,7 @@ const SignUp = () => {
       <title>Sign Up</title>
       <section className="min-h-[420px] my-16 px-5 grid place-items-center">
         <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
-          <form onSubmit={handleSignIn} className="card-body space-y-3.5">
+          <form onSubmit={handleSignUp} className="card-body space-y-3.5">
             <h1 className="text-xl font-semibold text-black text-center">
               Create your account
             </h1>

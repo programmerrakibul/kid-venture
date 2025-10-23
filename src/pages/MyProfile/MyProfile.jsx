@@ -29,6 +29,7 @@ const MyProfile = () => {
       }
 
       form.reset();
+      toast.success("Profile updated successfully!");
     } catch (error) {
       const message = getAuthErrorMessage(error);
       toast.error(message);

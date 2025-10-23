@@ -26,6 +26,7 @@ const SignIn = () => {
     try {
       await signInWithPassword(email, password);
       form.reset();
+      toast.success("Successfully signed in!");
       navigate(state ? state : "/");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
@@ -38,6 +39,7 @@ const SignIn = () => {
   const handleSignInWithGoogle = async () => {
     try {
       await signInWithGoogle();
+      toast.success("Successfully signed in!");
       navigate(state ? state : "/");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);

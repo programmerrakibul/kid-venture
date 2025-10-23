@@ -22,6 +22,7 @@ const Navbar = () => {
   const handleSignOut = async () => {
     try {
       await SignOutUser();
+      toast.success("Successfully signed out!");
     } catch (error) {
       const message = getAuthErrorMessage(error);
       toast.error(message);
