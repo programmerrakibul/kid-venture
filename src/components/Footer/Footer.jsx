@@ -5,15 +5,13 @@ import { IoLogoTwitter } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-10">
+    <footer className="nav-footer-linear py-10 mb-[43px] sm:mb-12 md:mb-0">
       <Container className="footer sm:footer-horizontal text-base-content">
         <aside>
-          <Link
-            to="/"
-            className="text-2xl text-neutral font-extrabold font-['Raleway']"
-          >
+          <Link to="/" className="logo">
             KidVenture
           </Link>
+
           <p className="max-w-sm opacity-80">
             Your premier destination for magical toys and creative adventures,
             offering carefully curated playthings that spark curiosity, foster
@@ -23,32 +21,32 @@ const Footer = () => {
 
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="">Branding</a>
+          <a className="footer-link">Design</a>
+          <a className="footer-link">Marketing</a>
+          <a className="footer-link">Advertisement</a>
         </nav>
 
         <nav>
           <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <a className="footer-link">Terms & Conditions</a>
+          <a className="footer-link">Privacy Policy</a>
+          <a className="footer-link">Cookie Policy</a>
         </nav>
 
         <nav>
           <h6 className="footer-title">Social Links</h6>
-          <a className="link link-hover">
-            <SiFacebook className="inline-block mr-1.5" /> Facebook
+          <a className="footer-link">
+            <SiFacebook className="footer-social-icon" /> Facebook
           </a>
-          <a className="link link-hover">
-            <SiGithub className="inline-block mr-1.5" /> Github
+          <a className="footer-link">
+            <SiGithub className="footer-social-icon" /> Github
           </a>
-          <a className="link link-hover">
-            <IoLogoTwitter className="inline-block mr-1.5" /> Twitter
+          <a className="footer-link">
+            <IoLogoTwitter className="footer-social-icon" /> Twitter
           </a>
-          <a className="link link-hover">
-            <SiLinkedin className="inline-block mr-1.5" /> Linkedin
+          <a className="footer-link">
+            <SiLinkedin className="footer-social-icon" /> Linkedin
           </a>
         </nav>
       </Container>

@@ -29,41 +29,25 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-base-100 shadow-sm">
+    <nav className="nav-footer-linear shadow-md">
       <Container>
         <div className="navbar px-0">
           <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <HiOutlineMenuAlt1 />
-              </div>
-              <ul
-                tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-              >
-                {navLinks}
-              </ul>
-            </div>
-            <Link
-              to="/"
-              className="text-2xl text-neutral font-extrabold font-['Raleway']"
-            >
+            <Link to="/" className="logo">
               KidVenture
             </Link>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 gap-5">{navLinks}</ul>
+          <div className="navbar-center fixed md:relative bottom-0 left-0 w-full md:w-auto px-5 md:px-0 nav-footer-linear md:bg-none! border-t-2 border-indigo-300 md:border-none z-10">
+            <ul className="menu menu-horizontal justify-evenly w-full px-1 gap-3.5 sm:gap-5">
+              {navLinks}
+            </ul>
           </div>
           <div className="navbar-end gap-3.5">
             {!currentUser ? (
               <>
                 <button
                   onClick={() => navigate("signin")}
-                  className="btn btn-primary"
+                  className="btn-primary nav-btn"
                 >
                   SignIn
                 </button>
@@ -72,7 +56,7 @@ const Navbar = () => {
               <>
                 <div className="relative group">
                   <div className="avatar">
-                    <div className="ring-primary ring-offset-base-100 size-10 rounded-full ring-2 bg-primary-content">
+                    <div className="ring-primary ring-offset-base-100 size-8 md:size-10 rounded-full ring-2 bg-primary-content">
                       <img
                         src={currentUser.photoURL}
                         alt={currentUser.displayName}
@@ -87,7 +71,10 @@ const Navbar = () => {
                   </p>
                 </div>
 
-                <button onClick={handleSignOut} className="btn btn-secondary">
+                <button
+                  onClick={handleSignOut}
+                  className="nav-btn btn-secondary"
+                >
                   SignOut
                 </button>
               </>

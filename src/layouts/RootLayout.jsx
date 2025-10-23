@@ -6,10 +6,10 @@ import { ToastContainer } from "react-toastify";
 const RootLayout = () => {
   return (
     <>
-      <header>
+      <header className="sticky top-0 z-10">
         <Navbar />
       </header>
-      <main className="min-h-[calc(100vh-284px)] space-y-16" >
+      <main className="min-h-[calc(100vh-284px)] space-y-16">
         <Outlet />
       </main>
       <Footer />

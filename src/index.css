@@ -13,9 +13,17 @@ h6,
   @apply font-['Raleway'];
 }
 
+.logo {
+  @apply text-xl md:text-2xl text-neutral font-extrabold font-['Raleway'];
+}
+
+.nav-btn {
+  @apply btn text-sm! md:text-base px-2.5 md:px-4 text-white;
+}
+
 .btn,
 a.nav-link {
-  @apply text-base font-semibold;
+  @apply text-sm sm:text-base font-bold sm:font-semibold;
 }
 
 a.nav-link {
@@ -24,7 +32,19 @@ a.nav-link {
 
 a.nav-link:hover,
 a.nav-link.active {
-  @apply text-neutral border-neutral;
+  @apply text-primary border-primary;
+}
+
+.footer-link {
+  @apply link link-hover;
+}
+
+.footer-social-icon {
+  @apply inline-block mr-1.5;
+}
+
+.nav-footer-linear {
+  @apply bg-linear-to-l from-indigo-200 via-indigo-300 to-indigo-200;
 }
 
 .input {
