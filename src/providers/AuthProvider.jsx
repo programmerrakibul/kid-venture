@@ -11,7 +11,6 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import PageLoader from "../components/PageLoader/PageLoader";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -62,12 +61,9 @@ const AuthProvider = ({ children }) => {
     signInWithGoogle,
     sendResetEmail,
     setCurrentUser,
+    loading,
   };
-  return (
-    <AuthContext value={authData}>
-      {loading ? <PageLoader /> : children}
-    </AuthContext>
-  );
+  return <AuthContext value={authData}>{children}</AuthContext>;
 };
 
 export default AuthProvider;
