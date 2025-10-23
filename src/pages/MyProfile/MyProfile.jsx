@@ -2,13 +2,16 @@ import { toast } from "react-toastify";
 import Container from "../../components/Container/Container";
 import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
+import { useState } from "react";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
   const { displayName, photoURL, email } = currentUser;
+  const [loading, setLoading] = useState(false);
 
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const form = e.currentTarget;
     const displayName = form.name.value;
@@ -29,6 +32,8 @@ const MyProfile = () => {
     } catch (error) {
       const message = getAuthErrorMessage(error);
       toast.error(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,14 +80,14 @@ const MyProfile = () => {
 
                   <form
                     onSubmit={handleUpdateProfile}
-                    className="collapse-content p-0"
+                    className="collapse-content p-0 space-y-3.5"
                   >
-                    <div className="form-control">
+                    <div className="space-y-1">
                       <label
                         htmlFor="name"
                         className="label font-semibold text-neutral"
                       >
-                        Name
+                        Full Name
                       </label>
                       <input
                         type="text"
@@ -93,7 +98,7 @@ const MyProfile = () => {
                       />
                     </div>
 
-                    <div className="form-control">
+                    <div className="space-y-1">
                       <label
                         htmlFor="photo_url"
                         className="label font-semibold text-neutral"
@@ -110,10 +115,11 @@ const MyProfile = () => {
                     </div>
 
                     <button
+                      disabled={loading}
                       type="submit"
-                      className="btn btn-neutral w-full mt-6"
+                      className="btn btn-neutral btn-block"
                     >
-                      Update
+                      {loading ? "Updating..." : "Update"}
                     </button>
                   </form>
                 </div>
