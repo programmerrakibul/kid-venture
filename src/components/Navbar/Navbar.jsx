@@ -1,4 +1,3 @@
-import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Container from "../Container/Container";
 import { Link, NavLink, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
@@ -8,16 +7,18 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
-  const navLinks = ["home", "my profile", "explore toys"].map((item) => (
-    <li key={item}>
-      <NavLink
-        to={item === "home" ? "/" : item.replace(" ", "-")}
-        className="nav-link"
-      >
-        {item}
-      </NavLink>
-    </li>
-  ));
+  const navLinks = ["home", "my profile", "explore toys", "offers"].map(
+    (item) => (
+      <li key={item}>
+        <NavLink
+          to={item === "home" ? "/" : item.replace(" ", "-")}
+          className="nav-link"
+        >
+          {item}
+        </NavLink>
+      </li>
+    )
+  );
 
   const handleSignOut = async () => {
     try {

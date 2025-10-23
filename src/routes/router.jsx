@@ -9,6 +9,7 @@ import SignIn from "../pages/SignIn/SignIn";
 import ProtectedRoute from "./ProtectedRoute";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Offers from "../pages/Offers/Offers";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
         element: <ExploreToys />,
       },
 
+      {
+        path: "offers",
+        element: (
+          <ProtectedRoute>
+            <Offers />
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "signup",
         element: <SignUp />,
