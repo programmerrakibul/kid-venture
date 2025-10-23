@@ -43,9 +43,11 @@ const Homepage = () => {
       </section>
 
       <section>
-        <Container className="space-y-7">
+        <Container className="space-y-5 md:space-y-7">
           <Title>Popular Toys</Title>
-          <div className="grid md:grid-cols-3 gap-7">{cardElements}</div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
+            {cardElements}
+          </div>
         </Container>
       </section>
 
