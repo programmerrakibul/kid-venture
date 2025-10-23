@@ -50,7 +50,7 @@ const MyProfile = () => {
     <>
       <title>My Profile</title>
 
-      <section className="my-10">
+      <section className="my-10 grid place-items-center">
         <Container className="grid place-items-center w-full min-h-[420px]">
           <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
             <div className="absolute -top-7 left-[50%] -translate-x-[50%]">
