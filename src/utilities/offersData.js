@@ -11,7 +11,7 @@ export const offersData = [
     id: 2,
     title: "Free Shipping",
     discount: "FREE",
-    description: "On orders over $500",
+    description: "On orders over ৳500",
     code: "FREESHIP",
     expires: "No expiry",
   },

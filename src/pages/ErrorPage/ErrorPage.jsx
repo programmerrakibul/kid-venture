@@ -7,6 +7,7 @@ const ErrorPage = () => {
   return (
     <>
       <title>Page Not Found</title>
+      
       <section className="min-h-dvh w-full grid place-items-center">
         <div className="max-w-md text-center space-y-6">
           <img src={img} alt="Page Not Found" className="animate-pulse" />

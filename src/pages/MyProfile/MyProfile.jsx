@@ -41,6 +41,7 @@ const MyProfile = () => {
   return (
     <>
       <title>My Profile</title>
+      
       <section className="my-10">
         <Container className="grid place-items-center w-full min-h-[420px]">
           <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
