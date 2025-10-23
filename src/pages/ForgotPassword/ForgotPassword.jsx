@@ -14,18 +14,19 @@ const ForgotPassword = () => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const email = e.currentTarget.email.value;
+
+    const form = e.currentTarget;
+    const email = form.email.value;
 
     try {
       await sendResetEmail(email);
       toast.success("Reset mail successfully send!");
       setForgetEmail("");
-      // e.currentTarget.reset();
+      form.reset();
       window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
-      console.log(error);
     } finally {
       setLoading(false);
     }
