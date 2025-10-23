@@ -17,13 +17,21 @@ const MyProfile = () => {
     const displayName = form.name.value;
     const photoURL = form.photo_url.value;
 
+    if (
+      currentUser.displayName === displayName &&
+      currentUser.photoURL === photoURL
+    ) {
+      toast.warn("Make some changes to update!");
+      return;
+    }
+
     try {
-      if (displayName) {
+      if (displayName && currentUser.displayName !== displayName) {
         await updateUserProfile({ ...currentUser, displayName });
         setCurrentUser({ ...currentUser, displayName });
       }
 
-      if (photoURL) {
+      if (photoURL && currentUser.photoURL !== photoURL) {
         await updateUserProfile({ ...currentUser, photoURL });
         setCurrentUser({ ...currentUser, photoURL });
       }
@@ -41,7 +49,7 @@ const MyProfile = () => {
   return (
     <>
       <title>My Profile</title>
-      
+
       <section className="my-10">
         <Container className="grid place-items-center w-full min-h-[420px]">
           <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">

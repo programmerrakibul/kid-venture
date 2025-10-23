@@ -38,7 +38,7 @@ const Offers = () => {
             <p>Browse our full collection of educational toys and games</p>
 
             <button
-              onClick={() => navigate("explore-toys")}
+              onClick={() => navigate("/explore-toys")}
               className="btn btn-primary btn-lg px-8 group"
             >
               Explore All Toys

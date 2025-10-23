@@ -36,18 +36,41 @@ const Footer = () => {
 
         <nav>
           <h6 className="footer-title">Social Links</h6>
-          <a className="footer-link">
+          <Link
+            to="https://www.facebook.com/programmerrakibul/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
             <SiFacebook className="footer-social-icon" /> Facebook
-          </a>
-          <a className="footer-link">
+          </Link>
+
+          <Link
+            to="https://github.com/programmerrakibul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
             <SiGithub className="footer-social-icon" /> Github
-          </a>
-          <a className="footer-link">
+          </Link>
+
+          <Link
+            to="https://x.com/innocentboy206"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
             <IoLogoTwitter className="footer-social-icon" /> Twitter
-          </a>
-          <a className="footer-link">
+          </Link>
+
+          <Link
+            to="https://www.linkedin.com/in/md-rakibul-islam-9399b3228/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
             <SiLinkedin className="footer-social-icon" /> Linkedin
-          </a>
+          </Link>
         </nav>
       </Container>
     </footer>
