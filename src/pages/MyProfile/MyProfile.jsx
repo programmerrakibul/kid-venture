@@ -78,7 +78,7 @@ const MyProfile = () => {
                   </p>
                 </div>
 
-                <div className="collapse py-3 sm:py-5 sm:px-6">
+                <div className="collapse collapse-arrow py-3 sm:py-5 sm:px-6">
                   <input type="checkbox" />
 
                   <div className="collapse-title p-0 font-semibold font-['Raleway'] text-indigo-700">
