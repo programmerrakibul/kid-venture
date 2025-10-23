@@ -51,8 +51,13 @@ a.nav-link.active {
   @apply w-full;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  @apply hidden! sm:flex!;
+}
+
 .swiper-navigation-icon {
-  @apply text-accent;
+  @apply text-accent size-8! lg:size-10;
 }
 
 .swiper-pagination-bullet-active {

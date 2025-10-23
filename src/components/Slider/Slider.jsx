@@ -37,15 +37,17 @@ const Slider = () => {
               <img
                 src={item.imageURL}
                 alt={`Slider Image ${item.id}`}
-                className="w-full"
+                className="w-full h-full min-h-[280px] object-cover"
               />
-              <div className="absolute top-0 left-0 w-full h-full bg-[#11111186] grid place-items-center backdrop-blur-[2px]">
-                <div className="text-primary-content text-center space-y-3.5 max-w-2xl">
-                  <h1 className="font-extrabold text-5xl">{item.title}</h1>
+              <div className="absolute top-0 left-0 w-full h-full bg-[#1111113f] grid place-items-center p-3">
+                <div className="text-white text-center space-y-3.5 max-w-2xl">
+                  <h1 className="font-bold md:font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                    {item.title}
+                  </h1>
                   <p>{item.subtitle}</p>
                   <button
                     onClick={() => navigate("explore-toys")}
-                    className="btn btn-accent text-white group"
+                    className="btn btn-accent text-white group text-xs! md:text-base!"
                   >
                     Explore Toys{" "}
                     <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
