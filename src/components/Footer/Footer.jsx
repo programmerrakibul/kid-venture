@@ -21,7 +21,7 @@ const Footer = () => {
 
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="">Branding</a>
+          <a className="footer-link">Branding</a>
           <a className="footer-link">Design</a>
           <a className="footer-link">Marketing</a>
           <a className="footer-link">Advertisement</a>

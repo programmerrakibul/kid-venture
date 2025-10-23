@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
-  const { displayName, photoURL, email } = currentUser;
+  const { displayName, photoURL, email } = currentUser || {};
   const [loading, setLoading] = useState(false);
 
   const handleUpdateProfile = async (e) => {
@@ -75,7 +75,7 @@ const MyProfile = () => {
                 <div className="collapse py-3 sm:py-5 sm:px-6">
                   <input type="checkbox" />
 
-                  <div className="collapse-title p-0 font-semibold font-['Raleway'] text-secondary">
+                  <div className="collapse-title p-0 font-semibold font-['Raleway'] text-indigo-700">
                     Want to update your profile info?
                   </div>
 
@@ -94,7 +94,8 @@ const MyProfile = () => {
                         type="text"
                         id="name"
                         name="name"
-                        placeholder={displayName}
+                        defaultValue={displayName}
+                        placeholder="Enter your name"
                         className="input bg-indigo-100 outline-indigo-400"
                       />
                     </div>
@@ -110,7 +111,8 @@ const MyProfile = () => {
                         type="text"
                         id="photo_url"
                         name="photo_url"
-                        placeholder={photoURL}
+                        defaultValue={photoURL}
+                        placeholder="Enter valid url"
                         className="input bg-indigo-100 outline-indigo-400"
                       />
                     </div>
