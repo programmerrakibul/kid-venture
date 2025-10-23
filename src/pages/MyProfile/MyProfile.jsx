@@ -18,14 +18,6 @@ const MyProfile = () => {
     const displayName = form.name.value;
     const photoURL = form.photo_url.value;
 
-    if (
-      currentUser.displayName === displayName &&
-      currentUser.photoURL === photoURL
-    ) {
-      toast.warn("Make some changes to update!");
-      return;
-    }
-
     try {
       if (displayName && currentUser.displayName !== displayName) {
         await updateUserProfile({ ...currentUser, displayName });
@@ -100,8 +92,7 @@ const MyProfile = () => {
                         type="text"
                         id="name"
                         name="name"
-                        defaultValue={displayName}
-                        placeholder="Enter your name"
+                        placeholder="Enter Your Full Name"
                         className="input bg-indigo-100 outline-indigo-400"
                       />
                     </div>
@@ -117,8 +108,7 @@ const MyProfile = () => {
                         type="text"
                         id="photo_url"
                         name="photo_url"
-                        defaultValue={photoURL}
-                        placeholder="Enter valid url"
+                        placeholder="Enter Valid Photo URL"
                         className="input bg-indigo-100 outline-indigo-400"
                       />
                     </div>
