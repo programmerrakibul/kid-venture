@@ -36,6 +36,8 @@ const Homepage = () => {
 
   return (
     <>
+      <title>Home - Kid Venture</title>
+
       <section className="mt-10">
         <Container>
           <Slider />
