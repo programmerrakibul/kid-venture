@@ -8,7 +8,7 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { SiAdguard } from "react-icons/si";
 import { LuHandshake } from "react-icons/lu";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Slider from "../../components/Slider/Slider";
 
 const Homepage = () => {
@@ -46,7 +46,15 @@ const Homepage = () => {
 
       <section>
         <Container className="space-y-5 md:space-y-7">
-          <Title>Popular Toys</Title>
+          <div className="flex items-center justify-between">
+            <Title>Popular Toys</Title>
+            <Link
+              to="explore-toys"
+              className="link link-hover font-['Raleway'] font-semibold text-lg"
+            >
+              All Toys
+            </Link>
+          </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
             {cardElements}
           </div>
