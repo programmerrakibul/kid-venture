@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import Avatar from "../Avatar/Avatar";
+import MyButton from "../MyButton/MyButton";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
@@ -30,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav-footer-linear shadow-md">
+    <nav className="nav-linear shadow-md">
       <Container>
         <div className="navbar px-0">
           <div className="navbar-start">
@@ -38,7 +39,7 @@ const Navbar = () => {
               KidVenture
             </Link>
           </div>
-          <div className="navbar-center fixed md:relative bottom-0 left-0 w-full md:w-auto px-5 md:px-0 nav-footer-linear md:bg-none! border-t-2 border-indigo-300 md:border-none z-10">
+          <div className="navbar-center fixed md:relative bottom-0 left-0 w-full md:w-auto px-5 md:px-0 nav-linear md:bg-none! border-t-2 border-indigo-300 md:border-none z-10">
             <ul className="menu menu-horizontal justify-evenly w-full px-1 gap-3.5 sm:gap-5">
               {navLinks}
             </ul>
@@ -46,12 +47,12 @@ const Navbar = () => {
           <div className="navbar-end gap-3.5">
             {!currentUser ? (
               <>
-                <button
-                  onClick={() => navigate("signin")}
-                  className="btn-primary nav-btn"
+                <MyButton
+                  handleClick={() => navigate("signin")}
+                  className="nav-btn"
                 >
                   SignIn
-                </button>
+                </MyButton>
               </>
             ) : (
               <>
@@ -70,12 +71,9 @@ const Navbar = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={handleSignOut}
-                  className="nav-btn btn-secondary"
-                >
+                <MyButton handleClick={handleSignOut} className="nav-btn">
                   SignOut
-                </button>
+                </MyButton>
               </>
             )}
           </div>

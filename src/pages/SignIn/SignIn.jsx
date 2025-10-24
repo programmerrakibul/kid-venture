@@ -6,6 +6,7 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 import ForgetEmailContext from "../../contexts/ForgetEmailContext";
+import MyButton from "../../components/MyButton/MyButton";
 
 const SignIn = () => {
   const { signInWithPassword, signInWithGoogle } = useAuth();
@@ -50,7 +51,7 @@ const SignIn = () => {
   return (
     <>
       <title>Sign In</title>
-      
+
       <section className="min-h-[420px] my-16 px-5 grid place-items-center">
         <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
@@ -61,8 +62,11 @@ const SignIn = () => {
               SignIn to your account
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
-              <div>
-                <label htmlFor="email" className="label">
+              <div className="space-y-1">
+                <label
+                  htmlFor="email"
+                  className="label text-neutral font-semibold"
+                >
                   Email
                 </label>
                 <input
@@ -71,13 +75,16 @@ const SignIn = () => {
                   name="email"
                   onChange={(e) => setForgetEmail(e.target.value)}
                   className="input"
-                  placeholder="Email"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
 
-              <div className="relative">
-                <label htmlFor="password" className="label">
+              <div className="space-y-1 relative">
+                <label
+                  htmlFor="password"
+                  className="label text-neutral font-semibold"
+                >
                   Password
                 </label>
                 <input
@@ -85,7 +92,7 @@ const SignIn = () => {
                   type={show ? "text" : "password"}
                   name="password"
                   className="input"
-                  placeholder="Password"
+                  placeholder="Enter your password"
                   required
                 />
 
@@ -95,16 +102,20 @@ const SignIn = () => {
                 >
                   {show ? <IoIosEyeOff /> : <IoMdEye />}
                 </span>
-              </div>
-              <div>
-                <Link to="/reset-password" className="link link-hover text-sm">
-                  Forgot Password?
-                </Link>
+
+                <div className="text-end">
+                  <Link
+                    to="/reset-password"
+                    className="link link-hover text-sm"
+                  >
+                    Forgot Password?
+                  </Link>
+                </div>
               </div>
 
-              <button disabled={loading} className="btn btn-primary mt-4">
+              <MyButton disable={loading} className="btn-block mt-4">
                 {loading ? "Signing Up..." : "SignUp"}
-              </button>
+              </MyButton>
 
               <p className="text-center">
                 Don't have an account?

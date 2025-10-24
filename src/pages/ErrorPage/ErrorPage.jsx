@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import img from "../../assets/page-not-found.svg";
+import MyButton from "../../components/MyButton/MyButton";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -7,7 +8,7 @@ const ErrorPage = () => {
   return (
     <>
       <title>Page Not Found</title>
-      
+
       <section className="min-h-dvh w-full grid place-items-center">
         <div className="max-w-md text-center space-y-6">
           <img src={img} alt="Page Not Found" className="animate-pulse" />
@@ -15,9 +16,7 @@ const ErrorPage = () => {
           <p>
             Oops! The page you're looking for doesn't exist or has been moved.
           </p>
-          <button onClick={() => navigate("/")} className="btn btn-secondary">
-            Back to Home
-          </button>
+          <MyButton handleClick={() => navigate("/")}>Back to Home</MyButton>
         </div>
       </section>
     </>

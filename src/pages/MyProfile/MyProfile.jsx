@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { useState } from "react";
 import Avatar from "../../components/Avatar/Avatar";
+import MyButton from "../../components/MyButton/MyButton";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
@@ -49,15 +50,15 @@ const MyProfile = () => {
     <>
       <title>My Profile</title>
 
-      <section className="my-10 grid place-items-center">
-        <Container className="grid place-items-center w-full min-h-[420px]">
-          <div className="bg-white w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
+      <section className="grid place-items-center py-5">
+        <Container className="grid place-items-center w-full min-h-[calc(100dvh-64px)]">
+          <div className="bg-linear-to-r from-primary/10 to-secondary/10 w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
             <div className="absolute -top-7 left-[50%] -translate-x-[50%]">
               <Avatar src={photoURL} alt={displayName} className="size-24" />
             </div>
 
-            <div className="border-t border-gray-200 px-4 py-5 sm:p-0 mt-24">
-              <div className="sm:divide-y sm:divide-gray-200">
+            <div className="border-t border-secondary/10 px-4 py-5 sm:p-0 mt-24">
+              <div className="divide-y divide-secondary/10">
                 <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <p className="font-semibold font-['Raleway'] text-neutral text-lg">
                     Full Name:
@@ -119,13 +120,14 @@ const MyProfile = () => {
                       />
                     </div>
 
-                    <button
-                      disabled={loading}
-                      type="submit"
-                      className="btn btn-neutral btn-block"
-                    >
+                    <p className="text-xs text-secondary/75 space-x-1.5">
+                      <strong>Note:</strong>
+                      <span>If you don't want to update one, leave blank</span>
+                    </p>
+
+                    <MyButton disable={loading} className="btn-block">
                       {loading ? "Updating..." : "Update"}
-                    </button>
+                    </MyButton>
                   </form>
                 </div>
               </div>

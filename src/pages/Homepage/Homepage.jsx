@@ -10,6 +10,7 @@ import { LuHandshake } from "react-icons/lu";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router";
 import Slider from "../../components/Slider/Slider";
+import MyButton from "../../components/MyButton/MyButton";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ const Homepage = () => {
         </Container>
       </section>
 
-      <section className="py-16 bg-slate-200">
+      <section className="py-16 bg-accent/10">
         <Container className="space-y-5">
           <div className="text-center space-y-3.5">
             <Title className="text-primary">Why Choose Us</Title>
@@ -136,13 +137,13 @@ const Homepage = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button
-              onClick={() => navigate("explore-toys")}
-              className="btn btn-primary btn-lg px-8 group"
+            <MyButton
+              handleClick={() => navigate("explore-toys")}
+              className="btn-lg px-8 group"
             >
               Explore All Toys
               <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
-            </button>
+            </MyButton>
           </div>
         </Container>
       </section>

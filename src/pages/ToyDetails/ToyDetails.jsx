@@ -5,6 +5,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import useToysData from "../../hooks/useToysData";
+import PopularBadge from "../../components/PopularBadge/PopularBadge";
 
 const ToyDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -23,6 +24,7 @@ const ToyDetails = () => {
     sellerEmail,
     description,
     subCategory,
+    isPopular,
   } = singleToy;
 
   const inStock = availableQuantity > 0;
@@ -30,10 +32,12 @@ const ToyDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const name = e.currentTarget.name.value;
+
+    const form = e.currentTarget;
+    const name = form.name.value;
 
     setLoading(false);
-    e.currentTarget.reset();
+    form.reset();
     toast.success(`Thank you, ${name}! We've received your request`);
   };
 
@@ -43,21 +47,24 @@ const ToyDetails = () => {
 
       <section className="mt-10">
         <Container>
-          <div className="space-y-3.5 bg-indigo-100 border-primary-content shadow-lg rounded-xl border-2 p-5">
+          <div className="space-y-7 bg-indigo-100 border-primary-content shadow-lg rounded-xl border-2 p-5">
             <button
               onClick={() => navigate(-1)}
               className="link link-hover font-semibold text-secondary"
             >
               <FaArrowLeftLong className="inline-block mr-1" /> Go Back
             </button>
+
             <div className="flex flex-col sm:flex-row gap-7">
-              <div className="flex-1/3 grid place-items-center shadow-md rounded-xl overflow-hidden">
-                <img src={pictureURL} className="w-full" alt={toyName} />
+              <div className="flex-1/3 grid place-items-center shadow-md rounded-xl overflow-hidden relative">
+                <img src={pictureURL} className="w-full h-full" alt={toyName} />
+
+                {isPopular && <PopularBadge />}
               </div>
 
               <div className="flex-2/3 text-[#807b7b] space-y-4">
-                <div className="flex gap-5 items-center">
-                  <h1 className="text-xl md:text-3xl font-semibold text-neutral">
+                <div className="flex flex-col-reverse sm:flex-row gap-3.5 sm:items-center justify-between">
+                  <h1 className="text-lg sm:text-xl md:text-3xl font-semibold text-neutral">
                     {toyName}
                   </h1>
 
@@ -66,16 +73,27 @@ const ToyDetails = () => {
                       inStock
                         ? "text-green-700 bg-green-200"
                         : "text-red-700 bg-red-200"
-                    } px-5 py-1 font-semibold rounded-full text-nowrap`}
+                    } px-5 py-1 font-semibold rounded-full text-nowrap w-fit`}
                   >
                     {inStock ? "In Stock" : "Out Of Stock"}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col-reverse sm:flex-row gap-3.5 sm:items-center justify-between">
+                  <p>
+                    <strong className="text-neutral">Category: </strong>
+                    {subCategory}
+                  </p>
+
                   <p>
                     <strong className="text-neutral">Available Items: </strong>
                     {availableQuantity}
+                  </p>
+                </div>
+
+                <div className="flex flex-col-reverse sm:flex-row gap-3.5 sm:items-center justify-between">
+                  <p className="text-[#2c732f] text-2xl font-medium">
+                    ৳{price}
                   </p>
 
                   <p className="flex items-center gap-1.5">
@@ -86,61 +104,64 @@ const ToyDetails = () => {
                   </p>
                 </div>
 
-                <p>
-                  <strong className="text-neutral">Category: </strong>
-                  {subCategory}
-                </p>
+                <div className="bg-primary/10 space-y-3.5 p-4 rounded-2xl max-w-sm w-full">
+                  <p>
+                    <strong className="text-neutral">Seller Name: </strong>
+                    {sellerName}
+                  </p>
 
-                <p className="text-[#2c732f] text-2xl font-medium">৳{price}</p>
+                  <p>
+                    <strong className="text-neutral">Seller Email: </strong>
+                    {sellerEmail}
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="space-y-3.5">
+
+            <div className="space-y-1.5">
+              <strong className="underline inline-block">Description</strong>
               <p>{description}</p>
-
-              <div className="bg-teal-100 space-y-3.5 p-4 rounded-2xl">
-                <p>
-                  <strong className="text-neutral">Seller Name: </strong>
-                  {sellerName}
-                </p>
-
-                <p>
-                  <strong className="text-neutral">Seller Email: </strong>
-                  {sellerEmail}
-                </p>
-              </div>
-            </div>{" "}
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="mb-10 bg-slate-200 py-7">
+      <section className="mb-10 bg-primary/7 py-7">
         <Container className="grid place-items-center">
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 max-w-lg w-full bg-slate-300 p-5 rounded-lg shadow-lg shadow-indigo-200"
+            className="space-y-4 max-w-lg w-full bg-linear-to-r from-primary/15 to-secondary/15 p-5 rounded-lg shadow-lg shadow-indigo-200"
           >
             <div className="space-y-1">
-              <label className="label font-semibold text-primary">
+              <label
+                htmlFor="name"
+                className="label font-semibold text-primary"
+              >
                 Your Name
               </label>
               <input
                 type="text"
+                id="name"
                 name="name"
                 placeholder="Enter your full name"
-                className="input bg-indigo-100 outline-indigo-400"
+                className="input bg-indigo-200 outline-indigo-400"
                 required
               />
             </div>
 
             <div className="space-y-1">
-              <label className="label font-semibold text-primary">
+              <label
+                htmlFor="email"
+                className="label font-semibold text-primary"
+              >
                 Email Address
               </label>
               <input
                 type="email"
+                id="email"
                 name="email"
                 placeholder="Enter your email"
-                className="input bg-indigo-100 outline-indigo-400"
+                className="input bg-indigo-200 outline-indigo-400"
                 required
               />
             </div>

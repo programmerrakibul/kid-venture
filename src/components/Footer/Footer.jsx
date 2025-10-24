@@ -5,7 +5,7 @@ import { IoLogoTwitter } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="nav-footer-linear py-10 mb-[43px] sm:mb-12 md:mb-0">
+    <footer className="bg-primary/25 py-10 mb-[43px] sm:mb-12 md:mb-0">
       <Container className="footer sm:footer-horizontal text-base-content">
         <aside>
           <Link to="/" className="logo">
@@ -20,22 +20,28 @@ const Footer = () => {
         </aside>
 
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="footer-link">Branding</a>
-          <a className="footer-link">Design</a>
-          <a className="footer-link">Marketing</a>
-          <a className="footer-link">Advertisement</a>
+          <h6 className="footer-title text-neutral font-bold opacity-100">
+            Services
+          </h6>
+          <Link className="footer-link">Branding</Link>
+          <Link className="footer-link">Design</Link>
+          <Link className="footer-link">Marketing</Link>
+          <Link className="footer-link">Advertisement</Link>
         </nav>
 
         <nav>
-          <h6 className="footer-title">Legal</h6>
-          <a className="footer-link">Terms & Conditions</a>
-          <a className="footer-link">Privacy Policy</a>
-          <a className="footer-link">Cookie Policy</a>
+          <h6 className="footer-title text-neutral font-bold opacity-100">
+            Legal
+          </h6>
+          <Link className="footer-link">Terms & Conditions</Link>
+          <Link className="footer-link">Privacy Policy</Link>
+          <Link className="footer-link">Cookie Policy</Link>
         </nav>
 
         <nav>
-          <h6 className="footer-title">Social Links</h6>
+          <h6 className="footer-title text-neutral font-bold opacity-100">
+            Social Links
+          </h6>
           <Link
             to="https://www.facebook.com/programmerrakibul/"
             target="_blank"

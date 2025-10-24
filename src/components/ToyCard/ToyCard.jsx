@@ -1,5 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
+import PopularBadge from "../PopularBadge/PopularBadge";
+import MyButton from "../MyButton/MyButton";
 
 const ToyCard = ({ singleToy }) => {
   const navigate = useNavigate();
@@ -18,24 +20,19 @@ const ToyCard = ({ singleToy }) => {
   const path = `/toy-details/${toyId}`;
 
   return (
-    <div className="card bg-secondary/10 border-2 border-primary/20 shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
-      <figure>
+    <div className="card bg-base-100 shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
+      <figure className="relative">
         <img
           src={pictureURL}
           alt={toyName}
           className="max-h-[250px] w-full aspect-3/2 object-cover"
         />
-      </figure>
-      <div className="card-body text-base">
-        <h2 className="card-title text-neutral/80">
-          {toyName}
 
-          {isPopular && pathname === "/explore-toys" && (
-            <span className="badge badge-success text-success-content">
-              Popular
-            </span>
-          )}
-        </h2>
+        {isPopular && pathname === "/explore-toys" && <PopularBadge />}
+      </figure>
+
+      <div className="card-body text-base">
+        <h2 className="card-title text-neutral/80">{toyName}</h2>
         <div className="space-y-2">
           <p className="flex items-center justify-between font-medium">
             <span>৳{price}</span>
@@ -48,12 +45,9 @@ const ToyCard = ({ singleToy }) => {
           </p>
         </div>
         <div className="card-actions mt-auto">
-          <button
-            onClick={() => navigate(path)}
-            className="btn btn-secondary btn-block"
-          >
+          <MyButton handleClick={() => navigate(path)} className="btn-block">
             View More
-          </button>
+          </MyButton>
         </div>
       </div>
     </div>

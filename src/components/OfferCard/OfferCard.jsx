@@ -1,8 +1,11 @@
 import { FaTag, FaRegClock } from "react-icons/fa";
-import { Link } from "react-router";
+import MyButton from "../MyButton/MyButton";
+import { useNavigate } from "react-router";
 
 const OfferCard = ({ singleOffer }) => {
+  const navigate = useNavigate();
   const { title, description, discount, code, expires } = singleOffer;
+
   return (
     <div className="card border-2 bg-blue-50 border-blue-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
       <div className="card-body p-4 sm:p-6 gap-5">
@@ -35,9 +38,12 @@ const OfferCard = ({ singleOffer }) => {
         </div>
 
         <div className="card-actions justify-center">
-          <Link to="/explore-toys" className="btn btn-primary btn-block">
+          <MyButton
+            handleClick={() => navigate("/explore-toys")}
+            className="btn-block"
+          >
             Shop Now
-          </Link>
+          </MyButton>
         </div>
       </div>
     </div>

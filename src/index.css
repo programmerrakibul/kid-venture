@@ -18,16 +18,16 @@ h6,
 }
 
 .nav-btn {
-  @apply btn text-sm! md:text-base px-2.5 md:px-4 text-white;
+  @apply btn-sm md:btn-md px-2.5 md:px-4;
 }
 
 .btn,
 a.nav-link {
-  @apply text-sm sm:text-base font-bold sm:font-semibold;
+  @apply text-sm sm:text-base sm:font-semibold;
 }
 
 a.nav-link {
-  @apply capitalize rounded-none bg-transparent py-0.5 px-0 border-b-2 border-transparent w-fit;
+  @apply capitalize rounded-none bg-transparent py-0.5 px-0 border-b-2 border-transparent w-fit text-neutral;
 }
 
 a.nav-link:hover,
@@ -43,7 +43,7 @@ a.nav-link.active {
   @apply inline-block mr-1.5;
 }
 
-.nav-footer-linear {
+.nav-linear {
   @apply bg-linear-to-l from-indigo-200 via-indigo-300 to-indigo-200;
 }
 

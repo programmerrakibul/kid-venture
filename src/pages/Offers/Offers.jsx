@@ -4,6 +4,7 @@ import OfferCard from "../../components/OfferCard/OfferCard";
 import Container from "../../components/Container/Container";
 import Title from "../../components/Title/Title";
 import { FaArrowRightLong } from "react-icons/fa6";
+import MyButton from "../../components/MyButton/MyButton";
 
 const Offers = () => {
   const navigate = useNavigate();
@@ -37,13 +38,13 @@ const Offers = () => {
 
             <p>Browse our full collection of educational toys and games</p>
 
-            <button
-              onClick={() => navigate("/explore-toys")}
-              className="btn btn-primary btn-lg px-8 group"
+            <MyButton
+              handleClick={() => navigate("/explore-toys")}
+              className="btn-lg px-8 group"
             >
               Explore All Toys
               <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
-            </button>
+            </MyButton>
           </div>
         </Container>
       </section>

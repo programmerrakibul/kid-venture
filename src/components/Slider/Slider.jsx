@@ -7,6 +7,7 @@ import "swiper/css";
 import { useNavigate } from "react-router";
 import { sliderData } from "../../utilities/sliderData";
 import { FaArrowRightLong } from "react-icons/fa6";
+import MyButton from "../MyButton/MyButton";
 
 const Slider = () => {
   const navigate = useNavigate();
@@ -45,14 +46,16 @@ const Slider = () => {
                   <h1 className="font-bold md:font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     {item.title}
                   </h1>
+
                   <p>{item.subtitle}</p>
-                  <button
-                    onClick={() => navigate("explore-toys")}
-                    className="btn btn-accent text-white group text-xs! md:text-base!"
+
+                  <MyButton
+                    handleClick={() => navigate("explore-toys")}
+                    className="btn-sm sm:btn-lg sm:px-8 group"
                   >
-                    Explore Toys{" "}
+                    Explore All Toys
                     <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
-                  </button>
+                  </MyButton>
                 </div>
               </div>
             </div>

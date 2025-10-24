@@ -5,6 +5,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import ForgetEmailContext from "../../contexts/ForgetEmailContext";
+import MyButton from "../../components/MyButton/MyButton";
 
 const ForgotPassword = () => {
   const { forgetEmail, setForgetEmail } = useContext(ForgetEmailContext);
@@ -36,7 +37,7 @@ const ForgotPassword = () => {
     <>
       <title>Reset Password</title>
 
-      <section className="min-h-80 my-16 px-5 grid place-items-center">
+      <section className="min-h-[calc(100dvh-64px)] p-5  grid place-items-center">
         <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
             onSubmit={handleResetPassword}
@@ -59,14 +60,14 @@ const ForgotPassword = () => {
                   name="email"
                   defaultValue={forgetEmail}
                   className="input"
-                  placeholder="Email"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
 
-              <button disabled={loading} className="btn btn-primary mt-4">
+              <MyButton disable={loading} className="btn-block mt-4">
                 {loading ? "Sending..." : "Send"}
-              </button>
+              </MyButton>
             </fieldset>
 
             <div>

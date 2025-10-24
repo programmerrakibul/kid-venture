@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
+import MyButton from "../../components/MyButton/MyButton";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
@@ -75,7 +76,7 @@ const SignUp = () => {
   return (
     <>
       <title>Sign Up</title>
-      
+
       <section className="min-h-[420px] my-16 px-5 grid place-items-center">
         <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form onSubmit={handleSignUp} className="card-body space-y-3.5">
@@ -84,46 +85,70 @@ const SignUp = () => {
             </h1>
 
             <fieldset className="fieldset gap-2.5 text-base">
-              <div>
-                <label className="label">Name</label>
+              <div className="space-y-1">
+                <label
+                  htmlFor="name"
+                  className="label text-neutral font-semibold"
+                >
+                  Full Name
+                </label>
                 <input
                   type="text"
+                  id="name"
                   name="name"
                   className="input"
-                  placeholder="Name"
+                  placeholder="Enter your full name"
                   required
                 />
               </div>
 
-              <div>
-                <label className="label">Email</label>
+              <div className="space-y-1">
+                <label
+                  htmlFor="email"
+                  className="label text-neutral font-semibold"
+                >
+                  Email
+                </label>
                 <input
                   type="email"
+                  id="email"
                   name="email"
                   className="input"
-                  placeholder="Email"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
 
-              <div>
-                <label className="label">Photo URL</label>
+              <div className="space-y-1">
+                <label
+                  htmlFor="photo_url"
+                  className="label text-neutral font-semibold"
+                >
+                  Photo URL
+                </label>
                 <input
                   type="text"
+                  id="photo_url"
                   name="photo_url"
                   className="input"
-                  placeholder="Photo URL"
+                  placeholder="Enter photo url"
                   required
                 />
               </div>
 
-              <div className="relative">
-                <label className="label">Password</label>
+              <div className="space-y-1 relative">
+                <label
+                  htmlFor="password"
+                  className="label text-neutral font-semibold"
+                >
+                  Password
+                </label>
                 <input
                   type={show ? "text" : "password"}
+                  id="password"
                   name="password"
                   className="input"
-                  placeholder="Password"
+                  placeholder="Enter your password"
                   required
                 />
                 <span
@@ -134,9 +159,10 @@ const SignUp = () => {
                 </span>
               </div>
 
-              <button disabled={loading} className="btn btn-primary mt-4">
+              <MyButton disable={loading} className="btn-block mt-4">
                 {loading ? "Signing Up..." : "SignUp"}
-              </button>
+              </MyButton>
+
               <p className="text-center">
                 Already have an account?
                 <Link
