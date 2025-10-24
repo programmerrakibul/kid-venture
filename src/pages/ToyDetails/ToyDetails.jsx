@@ -8,6 +8,7 @@ import useToysData from "../../hooks/useToysData";
 import PopularBadge from "../../components/PopularBadge/PopularBadge";
 import MyButton from "../../components/MyButton/MyButton";
 import Label from "../../components/Label/Label";
+import Input from "../../components/Input/Input";
 
 const ToyDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -142,26 +143,12 @@ const ToyDetails = () => {
           >
             <div className="space-y-1">
               <Label htmlFor="name">Your Name</Label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                className="input bg-indigo-200 outline-indigo-400"
-                required
-              />
+              <Input type="text" name="name" holder="Enter your full name" />
             </div>
 
             <div className="space-y-1">
               <Label htmlFor="email">Email Address</Label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                className="input bg-indigo-200 outline-indigo-400"
-                required
-              />
+              <Input type="email" name="email" holder="Enter your email" />
             </div>
 
             <MyButton disable={loading} className="btn-block mt-6">
