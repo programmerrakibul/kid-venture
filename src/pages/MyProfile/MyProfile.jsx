@@ -18,6 +18,12 @@ const MyProfile = () => {
     const displayName = form.name.value;
     const photoURL = form.photo_url.value;
 
+    if (!photoURL && !displayName) {
+      toast.warn("Make some changes to update!");
+      setLoading(false);
+      return;
+    }
+
     try {
       if (displayName && currentUser.displayName !== displayName) {
         await updateUserProfile({ ...currentUser, displayName });
