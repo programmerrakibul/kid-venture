@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import useToysData from "../../hooks/useToysData";
 import PopularBadge from "../../components/PopularBadge/PopularBadge";
+import MyButton from "../../components/MyButton/MyButton";
 
 const ToyDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -166,13 +167,12 @@ const ToyDetails = () => {
               />
             </div>
 
-            <button
-              disabled={loading}
-              type="submit"
-              className="btn btn-primary w-full mt-6"
+            <MyButton
+              disable={loading}
+              className="btn-block mt-6"
             >
               {loading ? "Please wait..." : "Try Now"}
-            </button>
+            </MyButton>
           </form>
         </Container>
       </section>
