@@ -36,7 +36,7 @@ a.nav-link.active {
 }
 
 .footer-link {
-  @apply link link-hover;
+  @apply hover:underline;
 }
 
 .footer-social-icon {
@@ -57,9 +57,9 @@ a.nav-link.active {
 }
 
 .swiper-navigation-icon {
-  @apply text-accent size-8! lg:size-10;
+  @apply text-secondary size-8! lg:size-10;
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-accent!;
+  @apply bg-secondary!;
 }
