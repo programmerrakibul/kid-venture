@@ -35,7 +35,13 @@ const ToyDetails = () => {
     setLoading(true);
 
     const form = e.currentTarget;
-    const name = form.name.value;
+    const name = form.name.value.trim();
+
+    if (!name) {
+      toast.warn("Invalid Name");
+      setLoading(false);
+      return;
+    }
 
     setLoading(false);
     form.reset();
@@ -167,10 +173,7 @@ const ToyDetails = () => {
               />
             </div>
 
-            <MyButton
-              disable={loading}
-              className="btn-block mt-6"
-            >
+            <MyButton disable={loading} className="btn-block mt-6">
               {loading ? "Please wait..." : "Try Now"}
             </MyButton>
           </form>

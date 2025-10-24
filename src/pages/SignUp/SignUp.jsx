@@ -19,14 +19,26 @@ const SignUp = () => {
     setLoading(true);
 
     const form = e.currentTarget;
-    const displayName = form.name.value;
-    const photoURL = form.photo_url.value;
-    const email = form.email.value;
+    const displayName = form.name.value.trim();
+    const photoURL = form.photo_url.value.trim();
+    const email = form.email.value.trim();
     const password = form.password.value;
 
     const validatePassLen = /^.{6,}$/;
     const validatePassUpper = /[A-Z]/;
     const validatePassLower = /[a-z]/;
+
+    if (!displayName) {
+      toast.warn("Invalid Name");
+      setLoading(false);
+      return;
+    }
+
+    if (!photoURL) {
+      toast.warn("Invalid Photo URL");
+      setLoading(false);
+      return;
+    }
 
     if (!validatePassLen.test(password)) {
       toast.warn("Password must be at least 6 characters long.");
@@ -53,7 +65,7 @@ const SignUp = () => {
 
       form.reset();
       toast.success("Successfully account created!");
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
@@ -66,7 +78,7 @@ const SignUp = () => {
     try {
       await signInWithGoogle();
       toast.success("Successfully signed in!");
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);

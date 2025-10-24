@@ -16,8 +16,8 @@ const MyProfile = () => {
     setLoading(true);
 
     const form = e.currentTarget;
-    const displayName = form.name.value;
-    const photoURL = form.photo_url.value;
+    const displayName = form.name.value.trim();
+    const photoURL = form.photo_url.value.trim();
 
     if (!photoURL && !displayName) {
       toast.warn("Make some changes to update!");

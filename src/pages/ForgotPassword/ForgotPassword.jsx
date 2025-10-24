@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     setLoading(true);
 
     const form = e.currentTarget;
-    const email = form.email.value;
+    const email = form.email.value.trim();
 
     try {
       await sendResetEmail(email);

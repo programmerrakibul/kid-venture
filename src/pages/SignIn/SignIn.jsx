@@ -21,14 +21,14 @@ const SignIn = () => {
     setLoading(true);
 
     const form = e.currentTarget;
-    const email = form.email.value;
+    const email = form.email.value.trim();
     const password = form.password.value;
 
     try {
       await signInWithPassword(email, password);
       form.reset();
       toast.success("Successfully signed in!");
-      navigate(state ? state : "/");
+      navigate(state ? state : "/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
@@ -41,7 +41,7 @@ const SignIn = () => {
     try {
       await signInWithGoogle();
       toast.success("Successfully signed in!");
-      navigate(state ? state : "/");
+      navigate(state ? state : "/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);

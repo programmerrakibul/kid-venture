@@ -1,6 +1,4 @@
 const MyButton = ({ children, handleClick, disable, className }) => {
-  console.log(typeof disable);
-
   return (
     <button
       disabled={disable === undefined ? "" : disable}
