@@ -5,6 +5,8 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { useState } from "react";
 import Avatar from "../../components/Avatar/Avatar";
 import MyButton from "../../components/MyButton/MyButton";
+import Label from "../../components/Label/Label";
+import Input from "../../components/Input/Input";
 
 const MyProfile = () => {
   const { currentUser, updateUserProfile, setCurrentUser } = useAuth();
@@ -89,34 +91,22 @@ const MyProfile = () => {
                     className="collapse-content p-0 space-y-3.5"
                   >
                     <div className="space-y-1">
-                      <label
-                        htmlFor="name"
-                        className="label font-semibold text-neutral"
-                      >
-                        Full Name
-                      </label>
-                      <input
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input
                         type="text"
-                        id="name"
                         name="name"
-                        placeholder="Enter Your Full Name"
-                        className="input bg-indigo-100 outline-indigo-400"
+                        holder="Enter Your Full Name"
+                        required={false}
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label
-                        htmlFor="photo_url"
-                        className="label font-semibold text-neutral"
-                      >
-                        Photo URL
-                      </label>
-                      <input
+                      <Label htmlFor="photo_url">Photo URL</Label>
+                      <Input
                         type="text"
-                        id="photo_url"
                         name="photo_url"
-                        placeholder="Enter Valid Photo URL"
-                        className="input bg-indigo-100 outline-indigo-400"
+                        holder="Enter Valid Photo URL"
+                        required={false}
                       />
                     </div>
 

@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 import ForgetEmailContext from "../../contexts/ForgetEmailContext";
 import MyButton from "../../components/MyButton/MyButton";
+import Label from "../../components/Label/Label";
+import Input from "../../components/Input/Input";
 
 const SignIn = () => {
   const { signInWithPassword, signInWithGoogle } = useAuth();
@@ -63,37 +65,21 @@ const SignIn = () => {
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
               <div className="space-y-1">
-                <label
-                  htmlFor="email"
-                  className="label text-neutral font-semibold"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
+                <Label htmlFor="email">Email</Label>
+                <Input
                   type="email"
                   name="email"
                   onChange={(e) => setForgetEmail(e.target.value)}
-                  className="input"
-                  placeholder="Enter your email"
-                  required
+                  holder="Enter your email"
                 />
               </div>
 
               <div className="space-y-1 relative">
-                <label
-                  htmlFor="password"
-                  className="label text-neutral font-semibold"
-                >
-                  Password
-                </label>
-                <input
-                  id="password"
+                <Label htmlFor="password">Password</Label>
+                <Input
                   type={show ? "text" : "password"}
                   name="password"
-                  className="input"
-                  placeholder="Enter your password"
-                  required
+                  holder="Enter your password"
                 />
 
                 <span

@@ -6,6 +6,8 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import ForgetEmailContext from "../../contexts/ForgetEmailContext";
 import MyButton from "../../components/MyButton/MyButton";
+import Label from "../../components/Label/Label";
+import Input from "../../components/Input/Input";
 
 const ForgotPassword = () => {
   const { forgetEmail, setForgetEmail } = useContext(ForgetEmailContext);
@@ -48,20 +50,12 @@ const ForgotPassword = () => {
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
               <div>
-                <label
-                  htmlFor="email"
-                  className="label text-neutral font-semibold"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
+                <Label htmlFor="email">Email</Label>
+                <Input
                   type="email"
                   name="email"
                   defaultValue={forgetEmail}
-                  className="input"
-                  placeholder="Enter your email"
-                  required
+                  holder="Enter your email"
                 />
               </div>
 

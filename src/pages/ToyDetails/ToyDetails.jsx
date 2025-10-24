@@ -7,6 +7,7 @@ import { useState } from "react";
 import useToysData from "../../hooks/useToysData";
 import PopularBadge from "../../components/PopularBadge/PopularBadge";
 import MyButton from "../../components/MyButton/MyButton";
+import Label from "../../components/Label/Label";
 
 const ToyDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -140,12 +141,7 @@ const ToyDetails = () => {
             className="space-y-4 max-w-lg w-full bg-linear-to-r from-primary/15 to-secondary/15 p-5 rounded-lg shadow-lg shadow-indigo-200"
           >
             <div className="space-y-1">
-              <label
-                htmlFor="name"
-                className="label font-semibold text-primary"
-              >
-                Your Name
-              </label>
+              <Label htmlFor="name">Your Name</Label>
               <input
                 type="text"
                 id="name"
@@ -157,12 +153,7 @@ const ToyDetails = () => {
             </div>
 
             <div className="space-y-1">
-              <label
-                htmlFor="email"
-                className="label font-semibold text-primary"
-              >
-                Email Address
-              </label>
+              <Label htmlFor="email">Email Address</Label>
               <input
                 type="email"
                 id="email"

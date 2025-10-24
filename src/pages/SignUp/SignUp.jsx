@@ -7,6 +7,8 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 import MyButton from "../../components/MyButton/MyButton";
+import Label from "../../components/Label/Label";
+import Input from "../../components/Input/Input";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
@@ -98,70 +100,26 @@ const SignUp = () => {
 
             <fieldset className="fieldset gap-2.5 text-base">
               <div className="space-y-1">
-                <label
-                  htmlFor="name"
-                  className="label text-neutral font-semibold"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="input"
-                  placeholder="Enter your full name"
-                  required
-                />
+                <Label htmlFor="name">Full Name</Label>
+                <Input type="text" name="name" holder="Enter your full name" />
               </div>
 
               <div className="space-y-1">
-                <label
-                  htmlFor="email"
-                  className="label text-neutral font-semibold"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="input"
-                  placeholder="Enter your email"
-                  required
-                />
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" name="email" holder="Enter your email" />
               </div>
 
               <div className="space-y-1">
-                <label
-                  htmlFor="photo_url"
-                  className="label text-neutral font-semibold"
-                >
-                  Photo URL
-                </label>
-                <input
-                  type="text"
-                  id="photo_url"
-                  name="photo_url"
-                  className="input"
-                  placeholder="Enter photo url"
-                  required
-                />
+                <Label htmlFor="photo_url">Photo URL</Label>
+                <Input type="text" name="photo_url" holder="Enter photo url" />
               </div>
 
               <div className="space-y-1 relative">
-                <label
-                  htmlFor="password"
-                  className="label text-neutral font-semibold"
-                >
-                  Password
-                </label>
-                <input
+                <Label htmlFor="password">Password</Label>
+                <Input
                   type={show ? "text" : "password"}
-                  id="password"
                   name="password"
-                  className="input"
-                  placeholder="Enter your password"
-                  required
+                  holder="Enter your password"
                 />
                 <span
                   onClick={() => setShow(!show)}
