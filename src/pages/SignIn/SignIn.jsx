@@ -54,8 +54,8 @@ const SignIn = () => {
     <>
       <title>Sign In</title>
 
-      <section className="min-h-[calc(100dvh-64px)] my-16 px-5 grid place-items-center">
-        <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
+      <section className="min-h-[calc(80dvh-64px)] my-16 px-5 grid place-items-center">
+        <div className="card bg-linear-to-l from-secondary/10 to-primary/10 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
             onSubmit={handleSignInWithPassword}
             className="card-body space-y-3.5"

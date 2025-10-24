@@ -53,7 +53,7 @@ const MyProfile = () => {
       <title>My Profile</title>
 
       <section className="grid place-items-center py-5">
-        <Container className="grid place-items-center w-full min-h-[calc(100dvh-64px)]">
+        <Container className="grid place-items-center w-full min-h-[calc(80dvh-64px)]">
           <div className="bg-linear-to-r from-primary/10 to-secondary/10 w-full max-w-lg drop-shadow-2xl drop-shadow-primary-content rounded-lg relative text-base">
             <div className="absolute -top-7 left-[50%] -translate-x-[50%]">
               <Avatar src={photoURL} alt={displayName} className="size-24" />

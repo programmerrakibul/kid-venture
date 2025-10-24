@@ -39,8 +39,8 @@ const ForgotPassword = () => {
     <>
       <title>Reset Password</title>
 
-      <section className="min-h-[calc(100dvh-64px)] p-5  grid place-items-center">
-        <div className="card bg-base-100 w-full max-w-md mx-auto shrink-0 shadow-2xl">
+      <section className="min-h-[calc(80dvh-64px)] p-5  grid place-items-center">
+        <div className="card bg-linear-to-l from-secondary/10 to-primary/10 w-full max-w-md mx-auto shrink-0 shadow-2xl">
           <form
             onSubmit={handleResetPassword}
             className="card-body text-base space-y-3"
