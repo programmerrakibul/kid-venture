@@ -1,14 +1,18 @@
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Container from "../../components/Container/Container";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import useToysData from "../../hooks/useToysData";
 
 const ToyDetails = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { state: singleToy } = useLocation();
+  const { allToys } = useToysData();
+  const { id } = useParams();
+  const singleToy = allToys.find((item) => item.toyId === Number(id));
+
   const {
     pictureURL,
     toyName,

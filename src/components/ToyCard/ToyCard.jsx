@@ -5,13 +5,17 @@ const ToyCard = ({ singleToy }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const { pictureURL, toyName, rating, availableQuantity, price, isPopular } =
-    singleToy;
+  const {
+    toyId,
+    pictureURL,
+    toyName,
+    rating,
+    availableQuantity,
+    price,
+    isPopular,
+  } = singleToy;
 
-  const path = `/toy-details/${toyName
-    .toLowerCase()
-    .replaceAll(" ", "-")
-    .replaceAll(".", "")}`;
+  const path = `/toy-details/${toyId}`;
 
   return (
     <div className="card bg-secondary/10 border-2 border-primary/20 shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
@@ -45,7 +49,7 @@ const ToyCard = ({ singleToy }) => {
         </div>
         <div className="card-actions mt-auto">
           <button
-            onClick={() => navigate(path, { state: singleToy })}
+            onClick={() => navigate(path)}
             className="btn btn-secondary btn-block"
           >
             View More

@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "toy-details/:name",
+        path: "toy-details/:id",
         element: (
           <ProtectedRoute>
             <ToyDetails />
