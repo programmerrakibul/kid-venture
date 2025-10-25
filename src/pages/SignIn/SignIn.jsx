@@ -18,6 +18,7 @@ const SignIn = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
+
   const handleSignInWithPassword = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -30,7 +31,7 @@ const SignIn = () => {
       await signInWithPassword(email, password);
       form.reset();
       toast.success("Successfully signed in!");
-      navigate(state ? state : "/", { replace: true });
+      navigate(state ? state.path : "/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
@@ -43,7 +44,7 @@ const SignIn = () => {
     try {
       await signInWithGoogle();
       toast.success("Successfully signed in!");
-      navigate(state ? state : "/", { replace: true });
+      navigate(state ? state.path : "/", { replace: true });
     } catch (error) {
       const errorMessage = getAuthErrorMessage(error.code);
       toast.error(errorMessage);
@@ -64,6 +65,14 @@ const SignIn = () => {
               SignIn to your account
             </h1>
             <fieldset className="fieldset gap-2.5 text-base">
+              {state && (
+                <div role="alert" className="p-2.5 text-center">
+                  <span className="font-semibold text-red-500 text-base md:text-lg">
+                    {state.message}
+                  </span>
+                </div>
+              )}
+
               <div className="space-y-1">
                 <Label htmlFor="email">Email</Label>
                 <Input

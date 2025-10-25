@@ -9,7 +9,12 @@ const ProtectedRoute = ({ children }) => {
     return <>{children}</>;
   }
 
-  return <Navigate to="/signin" state={pathname} />;
+  return (
+    <Navigate
+      to="/signin"
+      state={{ path: pathname, message: "You must login first" }}
+    />
+  );
 };
 
 export default ProtectedRoute;
