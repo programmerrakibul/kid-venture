@@ -97,7 +97,6 @@ const SignUp = () => {
             <h1 className="text-xl font-semibold text-black text-center">
               Create your account
             </h1>
-
             <fieldset className="fieldset gap-2.5 text-base">
               <div className="space-y-1">
                 <Label htmlFor="name">Full Name</Label>
@@ -143,15 +142,13 @@ const SignUp = () => {
                 </Link>
               </p>
             </fieldset>
-
             <div className="divider">OR</div>
-
             <button
               onClick={handleSignInWithGoogle}
               type="button"
-              className="btn btn-ghost bg-white text-black border-[#e5e5e5]"
+              className="btn bg-white hover:bg-transparent  text-black border-white shadow-none duration-300 transition-colors"
             >
-              <FcGoogle size={18} /> Login with Google
+              <FcGoogle size={18} /> SignUp with Google
             </button>
           </form>
         </div>

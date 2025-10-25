@@ -119,9 +119,9 @@ const SignIn = () => {
             <button
               onClick={handleSignInWithGoogle}
               type="button"
-              className="btn btn-ghost bg-white text-black border-[#e5e5e5]"
+              className="btn bg-white hover:bg-transparent  text-black border-white shadow-none duration-300 transition-colors"
             >
-              <FcGoogle size={18} /> Login with Google
+              <FcGoogle size={18} /> SignIn with Google
             </button>
           </form>
         </div>
