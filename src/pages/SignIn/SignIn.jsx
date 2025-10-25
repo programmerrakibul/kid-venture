@@ -18,7 +18,6 @@ const SignIn = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-
   const handleSignInWithPassword = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -109,7 +108,7 @@ const SignIn = () => {
               </div>
 
               <MyButton disable={loading} className="btn-block mt-4">
-                {loading ? "Signing Up..." : "SignUp"}
+                {loading ? "Signing In..." : "SignIn"}
               </MyButton>
 
               <p className="text-center">
