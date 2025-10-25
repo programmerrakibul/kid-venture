@@ -129,7 +129,7 @@ const ToyDetails = () => {
 
             <div className="space-y-1.5">
               <strong className="underline inline-block">Description</strong>
-              <p>{description}</p>
+              <p className="text-justify">{description}</p>
             </div>
           </div>
         </Container>
