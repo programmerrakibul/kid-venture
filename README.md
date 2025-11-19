@@ -35,7 +35,7 @@ partner in creating unforgettable childhood memories through the power of play.
 
 **Client:** HTML5, React, React Router, Tailwind CSS
 
-**Server:** NodeJS, ExpressJS, MongoDB
+**Server:** Firebase Auth
 
 **Packages:** Swiper, React Fast Marquee, React Icons, React Toastify
 
