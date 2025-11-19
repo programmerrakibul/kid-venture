@@ -39,6 +39,23 @@ partner in creating unforgettable childhood memories through the power of play.
 
 **Packages:** Swiper, React Fast Marquee, React Icons, React Toastify
 
+## 📦 Environment Variables
+
+To run this project, you will need to add the following firebase auth
+environment variables to your .env file
+
+`VITE_FIREBASE_API_KEY`
+
+`VITE_FIREBASE_AUTH_DOMAIN`
+
+`VITE_FIREBASE_PROJECT_ID`
+
+`VITE_FIREBASE_STORAGE_BUCKET`
+
+`VITE_FIREBASE_MESSAGING_SENDER_ID`
+
+`VITE_FIREBASE_APP_ID`
+
 ## 🖥️ Run Locally
 
 Clone the project
