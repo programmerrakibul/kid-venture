@@ -35,11 +35,11 @@ const Slider = () => {
       >
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="w-full relative max-h-[480px] rounded-lg overflow-hidden">
+            <div className="w-full relative h-[60dvh] md:h-[70dvh] rounded-lg overflow-hidden">
               <img
                 src={item.imageURL}
                 alt={`Slider Image ${item.id}`}
-                className="w-full h-full min-h-[280px] object-cover"
+                className="w-full h-full object-cover"
               />
               <div className="absolute top-0 left-0 w-full h-full bg-[#1111113f] grid place-items-center p-3">
                 <div className="text-white text-center space-y-3.5 max-w-2xl">
