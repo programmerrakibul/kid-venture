@@ -5,9 +5,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
 import { useNavigate } from "react-router";
-import { sliderData } from "../../utilities/sliderData";
 import { FaArrowRightLong } from "react-icons/fa6";
 import MyButton from "../MyButton/MyButton";
+import { sliderData } from "../../data/sliderData";
 
 const Slider = () => {
   const navigate = useNavigate();

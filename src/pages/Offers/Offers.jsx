@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
-import { offersData } from "../../utilities/offersData";
 import OfferCard from "../../components/OfferCard/OfferCard";
 import Container from "../../components/Container/Container";
 import Title from "../../components/Title/Title";
 import { FaArrowRightLong } from "react-icons/fa6";
 import MyButton from "../../components/MyButton/MyButton";
+import { offersData } from "../../data/offersData";
 
 const Offers = () => {
   const navigate = useNavigate();
