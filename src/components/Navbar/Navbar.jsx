@@ -1,5 +1,5 @@
 import Container from "../Container/Container";
-import { Link, NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
@@ -9,6 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { IoHomeSharp } from "react-icons/io5";
 import { GiBearFace } from "react-icons/gi";
 import { FaGift } from "react-icons/fa";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
@@ -28,7 +29,10 @@ const Navbar = () => {
   const navLinks = nav_items.map((item) => (
     <li key={item.id}>
       <NavLink to={item.slug} className="nav-link">
-        <span className="md:hidden text-xl tooltip tooltip-top" data-tip={item.name}>
+        <span
+          className="md:hidden text-xl tooltip tooltip-top"
+          data-tip={item.name}
+        >
           {item.icon}
         </span>
         <span className="hidden md:inline-block">{item.name}</span>
@@ -52,9 +56,7 @@ const Navbar = () => {
       <Container>
         <div className="navbar px-0">
           <div className="navbar-start">
-            <Link to="/" className="logo">
-              KidVenture
-            </Link>
+            <Logo />
           </div>
           <div className="navbar-center fixed md:relative bottom-0 left-0 w-full md:w-auto px-5 md:px-0 nav-linear md:bg-none! border-t-2 border-indigo-300 md:border-none z-10">
             <ul className="menu menu-horizontal justify-between w-full px-1 gap-3.5 sm:gap-5">

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import Container from "../Container/Container";
 import { SiFacebook, SiGithub, SiLinkedin } from "react-icons/si";
 import { IoLogoTwitter } from "react-icons/io";
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
   return (
@@ -9,9 +10,7 @@ const Footer = () => {
       <Container className="space-y-3.5">
         <div className="footer sm:footer-horizontal text-base-content">
           <aside>
-            <Link to="/" className="logo">
-              KidVenture
-            </Link>
+            <Logo />
 
             <p className="max-w-sm opacity-80">
               Your premier destination for magical toys and creative adventures,
