@@ -5,17 +5,33 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import Avatar from "../Avatar/Avatar";
 import MyButton from "../MyButton/MyButton";
+import { CgProfile } from "react-icons/cg";
+import { IoHomeSharp } from "react-icons/io5";
+import { GiBearFace } from "react-icons/gi";
+import { FaGift } from "react-icons/fa";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
-  const navLinks = ["home", "profile", "explore toys", "offers"].map((item) => (
-    <li key={item}>
-      <NavLink
-        to={item === "home" ? "/" : item.replace(" ", "-")}
-        className="nav-link"
-      >
-        {item}
+  const nav_items = [
+    { id: 1, name: "Home", slug: "/", icon: <IoHomeSharp /> },
+    { id: 1, name: "Profile", slug: "/profile", icon: <CgProfile /> },
+    {
+      id: 1,
+      name: "Explore Toys",
+      slug: "/explore-toys",
+      icon: <GiBearFace />,
+    },
+    { id: 1, name: "Offers", slug: "/offers", icon: <FaGift /> },
+  ];
+
+  const navLinks = nav_items.map((item) => (
+    <li key={item.id}>
+      <NavLink to={item.slug} className="nav-link">
+        <span className="md:hidden text-xl tooltip tooltip-top" data-tip={item.name}>
+          {item.icon}
+        </span>
+        <span className="hidden md:inline-block">{item.name}</span>
       </NavLink>
     </li>
   ));
@@ -41,7 +57,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center fixed md:relative bottom-0 left-0 w-full md:w-auto px-5 md:px-0 nav-linear md:bg-none! border-t-2 border-indigo-300 md:border-none z-10">
-            <ul className="menu menu-horizontal justify-evenly w-full px-1 gap-3.5 sm:gap-5">
+            <ul className="menu menu-horizontal justify-between w-full px-1 gap-3.5 sm:gap-5">
               {navLinks}
             </ul>
           </div>

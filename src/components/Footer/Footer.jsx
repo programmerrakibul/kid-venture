@@ -5,7 +5,7 @@ import { IoLogoTwitter } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary/25 py-10 mb-[43px] sm:mb-12 md:mb-0">
+    <footer className="bg-primary/25 py-10 mb-11 md:mb-0">
       <Container className="space-y-3.5">
         <div className="footer sm:footer-horizontal text-base-content">
           <aside>
