@@ -15,14 +15,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const nav_items = [
     { id: 1, name: "Home", slug: "/", icon: <IoHomeSharp /> },
-    { id: 1, name: "Profile", slug: "/profile", icon: <CgProfile /> },
+    { id: 2, name: "Profile", slug: "/profile", icon: <CgProfile /> },
     {
-      id: 1,
+      id: 3,
       name: "Explore Toys",
       slug: "/explore-toys",
       icon: <GiBearFace />,
     },
-    { id: 1, name: "Offers", slug: "/offers", icon: <FaGift /> },
+    { id: 4, name: "Offers", slug: "/offers", icon: <FaGift /> },
   ];
 
   const navLinks = nav_items.map((item) => (
