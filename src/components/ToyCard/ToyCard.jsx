@@ -7,15 +7,7 @@ const ToyCard = ({ singleToy }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const {
-    toyId,
-    pictureURL,
-    toyName,
-    rating,
-    availableQuantity,
-    price,
-    isPopular,
-  } = singleToy;
+  const { toyId, pictureURL, toyName, rating, price, isPopular } = singleToy;
 
   const path = `/toy-details/${toyId}`;
 
@@ -25,25 +17,21 @@ const ToyCard = ({ singleToy }) => {
         <img
           src={pictureURL}
           alt={toyName}
-          className="max-h-[250px] w-full aspect-3/2 object-cover"
+          className="max-h-32 w-full aspect-3/2 object-cover"
         />
 
         {isPopular && pathname === "/explore-toys" && <PopularBadge />}
       </figure>
 
       <div className="card-body text-base">
-        <h2 className="card-title text-neutral/80">{toyName}</h2>
-        <div className="space-y-2">
-          <p className="flex items-center justify-between font-medium">
-            <span>৳{price}</span>
-            <span className="flex items-center gap-1.5">
-              <FaStar fill="#FF8A00" size={18} /> {rating}
-            </span>
-          </p>
-          <p>
-            <strong>Available Items:</strong> {availableQuantity}
-          </p>
+        <h2 className="card-title text-neutral/80 line-clamp-1">{toyName}</h2>
+        <div className="flex items-center justify-between font-medium">
+          <span>৳{price}</span>
+          <span className="flex items-center gap-1.5">
+            <FaStar fill="#FF8A00" size={18} /> {rating}
+          </span>
         </div>
+
         <div className="card-actions mt-auto">
           <MyButton handleClick={() => navigate(path)} className="btn-block">
             View More
