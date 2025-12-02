@@ -15,7 +15,7 @@ const ToyDetails = () => {
   const navigate = useNavigate();
   const { allToys } = useToysData();
   const { id } = useParams();
-  const singleToy = allToys.find((item) => item.toyId === Number(id));
+  const singleToy = allToys.find((item) => item.toyId === id);
 
   const {
     pictureURL,
