@@ -11,6 +11,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router";
 import Slider from "../../components/Slider/Slider";
 import MyButton from "../../components/MyButton/MyButton";
+import { faqData } from "../../data/faqData";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const Homepage = () => {
               All Toys
             </Link>
           </div>
-          
+
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-7">
             {cardElements}
           </div>
@@ -145,6 +146,37 @@ const Homepage = () => {
               Explore All Toys
               <FaArrowRightLong className="group-hover:ml-1.5 duration-300" />
             </MyButton>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-12 bg-base-100">
+        <Container className="space-y-5">
+          <div className="text-center space-y-3.5">
+            <Title>Frequently Asked Questions</Title>
+            <p className="text-base-content/70 max-w-2xl mx-auto">
+              Find quick answers to common questions about Kid-Venture. Can't
+              find what you're looking for? Contact our support team.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqData.map((faq) => (
+              <div
+                key={faq.id}
+                className="collapse collapse-plus bg-primary/5 border border-primary/50 shadow-sm"
+              >
+                <input type="radio" name="faq-accordion" />
+
+                <div className="collapse-title text-lg md:text-xl font-semibold text-primary">
+                  {faq.question}
+                </div>
+
+                <div className="collapse-content">
+                  <p className="text-base-content/80 pt-2">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

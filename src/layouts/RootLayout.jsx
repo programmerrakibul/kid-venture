@@ -21,7 +21,7 @@ const RootLayout = () => {
           <header className="sticky top-0 z-50">
             <Navbar />
           </header>
-          <main className="space-y-16">
+          <main className="space-y-16 md:space-y-20">
             <Outlet />
           </main>
           <Footer />
