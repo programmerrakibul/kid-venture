@@ -52,7 +52,7 @@ const SignIn = () => {
 
   return (
     <>
-      <title>Sign In</title>
+      <title>Sign In | KidVenture</title>
 
       <section className="min-h-[calc(70dvh-64px)] my-16 px-5 grid place-items-center">
         <div className="card bg-linear-to-l from-secondary/10 to-primary/10 w-full max-w-md mx-auto shrink-0 shadow-2xl">

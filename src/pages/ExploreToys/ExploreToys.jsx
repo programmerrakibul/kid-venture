@@ -12,7 +12,7 @@ const ExploreToys = () => {
 
   return (
     <>
-      <title>Explore Toys</title>
+      <title>Explore Toys | KidVenture</title>
 
       <section className="my-8">
         <Container className="space-y-5 md:space-y-7">

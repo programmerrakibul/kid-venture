@@ -50,7 +50,7 @@ const MyProfile = () => {
 
   return (
     <>
-      <title>My Profile</title>
+      <title>My Profile | KidVenture</title>
 
       <section className="grid place-items-center py-5">
         <Container className="grid place-items-center w-full min-h-[calc(80dvh-64px)]">

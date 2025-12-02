@@ -37,7 +37,7 @@ const Homepage = () => {
 
   return (
     <>
-      <title>Home - KidVenture</title>
+      <title>Home | KidVenture</title>
 
       <section className="mt-10">
         <Container>

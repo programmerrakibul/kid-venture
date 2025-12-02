@@ -52,7 +52,7 @@ const ToyDetails = () => {
 
   return (
     <>
-      <title>{toyName}</title>
+      <title>{`${toyName} | KidVenture`}</title>
 
       <section className="mt-10">
         <Container>

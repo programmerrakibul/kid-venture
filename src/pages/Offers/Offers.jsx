@@ -15,7 +15,7 @@ const Offers = () => {
 
   return (
     <>
-      <title>Exclusive Offers</title>
+      <title>Exclusive Offers | KidVenture</title>
 
       <section className="py-8 md:py-12">
         <Container className="space-y-10">
