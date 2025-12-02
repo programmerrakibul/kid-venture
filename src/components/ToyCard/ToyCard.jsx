@@ -7,7 +7,7 @@ const ToyCard = ({ singleToy }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const { toyId, pictureURL, toyName, rating, price, isPopular } = singleToy;
+  const { toyId, pictureURL, toyName, isPopular, description } = singleToy;
 
   const path = `/toy-details/${toyId}`;
 
@@ -23,13 +23,10 @@ const ToyCard = ({ singleToy }) => {
         {isPopular && pathname === "/explore-toys" && <PopularBadge />}
       </figure>
 
-      <div className="card-body text-base">
-        <h2 className="card-title text-neutral/80 line-clamp-1">{toyName}</h2>
-        <div className="flex items-center justify-between font-medium">
-          <span>৳{price}</span>
-          <span className="flex items-center gap-1.5">
-            <FaStar fill="#FF8A00" size={18} /> {rating}
-          </span>
+      <div className="card-body text-base gap-4">
+        <div className="space-y-0.5">
+          <h2 className="card-title text-neutral/80 line-clamp-1">{toyName}</h2>
+          <p className="line-clamp-2 text-neutral/60">{description}</p>
         </div>
 
         <div className="card-actions mt-auto">
