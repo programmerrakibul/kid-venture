@@ -9,7 +9,7 @@ const OfferCard = ({ singleOffer }) => {
   return (
     <div className="card border-2 bg-blue-50 border-blue-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
       <div className="card-body p-4 sm:p-6 gap-5">
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-2">
           <div className="flex items-center gap-3">
             <div>
               <h3 className="font-bold text-base sm:text-lg text-blue-700">
@@ -18,7 +18,7 @@ const OfferCard = ({ singleOffer }) => {
               <p>{description}</p>
             </div>
           </div>
-          <div className="text-xl md:text-2xl font-bold text-blue-700">
+          <div className="text-xl md:text-xl font-bold text-blue-700">
             {discount}
           </div>
         </div>
