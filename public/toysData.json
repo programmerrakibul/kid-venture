@@ -10,7 +10,8 @@
     "isPopular": true,
     "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine, from houses to vehicles. This 650-piece set includes special pieces like windows, doors, and wheels to enhance building possibilities. The durable plastic bricks are compatible with all Lego systems and come with an idea book featuring 50+ building inspirations. Perfect for developing fine motor skills and spatial awareness while providing hours of engaging entertainment for children aged 4-12.",
     "pictureURL": "https://i.ibb.co/gK5c6CL/Lego-Classic-Bricks.png",
-    "subCategory": "Building Blocks"
+    "subCategory": "Building Blocks",
+    "createdAt": "2023-08-15T10:30:45.123Z"
   },
   {
     "toyId": "8a2b9c4d6e1f3a7b5c8d9e2f",
@@ -23,7 +24,8 @@
     "isPopular": true,
     "description": "Three-story dream house with elevator, pool, and working lights for endless imaginative play. This magnificent dollhouse features over 10 rooms including a bedroom with working closet, modern kitchen with realistic appliances, and a rooftop patio with slide. The electronic elevator can carry multiple dolls between floors, while 70+ accessories provide endless storytelling opportunities. Easy to assemble with sturdy construction that withstands daily play. Transformative features include convertible furniture and hidden surprises that make every play session unique and exciting.",
     "pictureURL": "https://i.ibb.co/gZByXxb0/Barbie-Dreamhouse.png",
-    "subCategory": "Dollhouses"
+    "subCategory": "Dollhouses",
+    "createdAt": "2024-01-22T14:15:22.456Z"
   },
   {
     "toyId": "3c6d9e2f4a8b7c5d1e2f3a4b",
@@ -36,7 +38,8 @@
     "isPopular": false,
     "description": "Complete race track with loops, jumps, and multiple cars for high-speed racing action. This adrenaline-packed set features a gravity-defying loop that sends cars upside down and a spectacular jump ramp for airborne stunts. Includes 2 exclusive Hot Wheels cars with special designs and enhanced speed capabilities. The track system is modular and expandable, allowing kids to create increasingly complex racing circuits. Easy snap-together construction means setup takes minutes, while the durable design ensures the track survives countless crashes and high-speed impacts.",
     "pictureURL": "https://i.ibb.co/ksX7QtYK/Hot-Wheels-Track-Set.png",
-    "subCategory": "Vehicle Toys"
+    "subCategory": "Vehicle Toys",
+    "createdAt": "2023-11-05T09:45:33.789Z"
   },
   {
     "toyId": "7e8f9a1b2c3d4e5f6a7b8c9d",
@@ -49,7 +52,8 @@
     "isPopular": false,
     "description": "Classic Play-Doh set with extruder and multiple molds for creating fun shapes and designs. This ultimate shaping machine comes with 6 different mold plates that create everything from spaghetti strands to geometric shapes and fun characters. The easy-to-use crank mechanism is perfect for little hands to operate independently. Includes 10 vibrant colors of Play-Doh compound that never dry out when properly stored. Encourages artistic expression and develops hand strength while providing sensory stimulation. Cleanup is simple and the non-toxic formula is safe for children ages 3 and up.",
     "pictureURL": "https://i.ibb.co/sdXjH8k2/Play-Doh-Fun-Factory.png",
-    "subCategory": "Arts & Crafts"
+    "subCategory": "Arts & Crafts",
+    "createdAt": "2023-09-18T16:20:11.234Z"
   },
   {
     "toyId": "2a3b4c5d6e7f8a9b1c2d3e4f",
@@ -62,7 +66,8 @@
     "isPopular": true,
     "description": "Dart blaster with 6-dart rotating drum and slam-fire action for epic Nerf battles. This high-capacity blaster features a quick-draw design with easy priming and rapid firing capabilities. The rotating drum holds 6 official Elite darts and features a drop-down cylinder for fast reloading during intense combat situations. Slam-fire functionality allows for continuous shooting by holding down the trigger while pumping. Includes 6 official Nerf Elite darts with precision engineering for accurate targeting. Built with durable materials to survive outdoor adventures and indoor skirmishes alike.",
     "pictureURL": "https://i.ibb.co/PswN4yvs/Nerf-Elite-Disruptor.png",
-    "subCategory": "Action Toys"
+    "subCategory": "Action Toys",
+    "createdAt": "2024-02-10T11:55:44.567Z"
   },
   {
     "toyId": "9a1b2c3d4e5f6a7b8c9d1e2f",
@@ -75,7 +80,8 @@
     "isPopular": false,
     "description": "Interactive doll that eats, drinks, and talks back for realistic caregiving play. This amazing doll comes with realistic feeding functions - she actually eats the included food packets and drinks from her special bottle. After feeding, she needs her diaper changed, teaching responsibility and nurturing skills. Features over 10 phrases and sounds that respond to care actions. Includes complete care set: doll, bottle, spoon, 3 food packets, and 2 diapers. The doll's eyes open and close realistically, and her mouth moves while eating. Battery operated for maximum interactive fun.",
     "pictureURL": "https://i.ibb.co/4gK1s3bL/Baby-Alive-Doll.png",
-    "subCategory": "Interactive Dolls"
+    "subCategory": "Interactive Dolls",
+    "createdAt": "2023-10-30T08:10:29.890Z"
   },
   {
     "toyId": "4c5d6e7f8a9b1c2d3e4f5a6b",
@@ -88,7 +94,8 @@
     "isPopular": true,
     "description": "Magnetic building tiles that teach STEM concepts through creative construction play. These translucent colored tiles contain safely embedded magnets along all edges, allowing them to connect easily from any side. The 32-piece set includes squares and triangles in vibrant colors that glow beautifully when held up to light. Children discover principles of geometry, magnetism, and architectural design while building anything from simple shapes to complex 3D structures. The durable plastic withstands rough play and the pieces are precisely calibrated for perfect connections every time. Award-winning educational toy that grows with your child's abilities.",
     "pictureURL": "https://i.ibb.co/0jTxpJV0/Magna-Tiles-Clear-Colors.jpg",
-    "subCategory": "Educational Toys"
+    "subCategory": "Educational Toys",
+    "createdAt": "2024-03-01T13:25:38.901Z"
   },
   {
     "toyId": "6d7e8f9a1b2c3d4e5f6a7b8c",
@@ -101,7 +108,8 @@
     "isPopular": false,
     "description": "Feature-packed tower with elevator, slide, and multiple character figures from the popular show. This authentic replica of the Paw Patrol headquarters stands over 2 feet tall and includes working elevator that lifts pups to the top observation deck. Features Chase and Marshall figures with movable parts and character-specific accessories. The lookout tower includes a rotating chair, periscope, pup packs, and the iconic slide that sends characters spiraling to ground level. Compatible with other Paw Patrol vehicles and playsets for expanded adventure possibilities. Perfect for recreating rescue missions from the television series.",
     "pictureURL": "https://i.ibb.co/XfFrkqcQ/Paw-Patrol-Lookout-Tower.png",
-    "subCategory": "TV Character Toys"
+    "subCategory": "TV Character Toys",
+    "createdAt": "2023-12-12T17:40:55.678Z"
   },
   {
     "toyId": "8f9a1b2c3d4e5f6a7b8c9d1e",
@@ -111,10 +119,11 @@
     "price": 380.0,
     "rating": 4.7,
     "availableQuantity": 50,
-    "isPopular": false,
+    "isPopular": true,
     "description": "Musical activity gym with lights, sounds, and detachable toys for infant development. This multi-mode gym grows with your baby from newborn to toddler with adjustable features and multiple play options. The large piano keys play musical notes and feature light-up effects when kicked, encouraging gross motor development. Includes 5 detachable toys: crinkle panda, self-discovery mirror, rattle elephant, teether zebra, and a clicking giraffe. Three play modes include learning mode with colors and numbers, music mode with 15+ melodies, and animal mode with sound effects. The soft mat provides comfortable tummy time surface.",
     "pictureURL": "https://i.ibb.co/CdNyF89/Fisher-Price-Piano-Gym.png",
-    "subCategory": "Infant Toys"
+    "subCategory": "Infant Toys",
+    "createdAt": "2023-07-25T10:05:16.345Z"
   },
   {
     "toyId": "1b2c3d4e5f6a7b8c9d1e2f3a",
@@ -124,10 +133,11 @@
     "price": 299.99,
     "rating": 4.3,
     "availableQuantity": 80,
-    "isPopular": true,
+    "isPopular": false,
     "description": "Web-shooting toy with projectile webs and sound effects for superhero role play. This authentic replica features a motorized web mechanism that shoots up to 20 feet with included web refills. Features 5 different sound effects including web shooting, impact sounds, and Spider-Man phrases from the movies. The adjustable strap fits most children's wrists comfortably and the quick-reload mechanism allows for rapid firing during intense crime-fighting action. Built with durable materials that withstand active outdoor play. Includes 3 web canisters providing over 100 shots before needing replacement. Perfect for imaginative play and superhero adventures.",
     "pictureURL": "https://i.ibb.co/gMKt3dHW/Marvel-Spider-Man-Web-Shooter.jpg",
-    "subCategory": "Role Play Toys"
+    "subCategory": "Role Play Toys",
+    "createdAt": "2024-01-05T15:30:27.812Z"
   },
   {
     "toyId": "3d4e5f6a7b8c9d1e2f3a4b5c",
@@ -137,10 +147,11 @@
     "price": 255.0,
     "rating": 4.5,
     "availableQuantity": 120,
-    "isPopular": false,
+    "isPopular": true,
     "description": "Classic stacking game that tests steady hands and nerves with wooden blocks. This timeless game includes 54 precision-crafted hardwood blocks that stack into a solid tower nearly 2 feet tall. Players take turns removing one block at a time from any level of the tower and placing it on top, creating an increasingly unstable structure. The game ends when the tower collapses, with the last player to successfully move a block declared the winner. Develops hand-eye coordination, strategic thinking, and patience. Simple rules make it accessible for ages 6 and up, while the tension-filled gameplay appeals to teens and adults alike.",
     "pictureURL": "https://i.ibb.co/ymYYFFFB/Jenga-Classic-Game.png",
-    "subCategory": "Board Games"
+    "subCategory": "Board Games",
+    "createdAt": "2023-08-28T12:15:49.456Z"
   },
   {
     "toyId": "5f6a7b8c9d1e2f3a4b5c6d7e",
@@ -153,7 +164,8 @@
     "isPopular": false,
     "description": "High-speed RC car with 2.4GHz remote control, working headlights, and durable design. This 1:14 scale off-road vehicle reaches speeds up to 15 mph and handles various terrains including grass, pavement, and dirt tracks. The advanced 2.4GHz technology allows multiple cars to race simultaneously without interference. Features full-function control with forward, reverse, left, and right steering with proportional speed control. The rechargeable battery provides 20+ minutes of continuous playtime with only 2-hour charging. Built with shock-absorbing suspension and rubber tires for smooth performance. LED headlights and taillights add realism for nighttime driving.",
     "pictureURL": "https://i.ibb.co/DDgGyH9n/Remote-Control-Car.png",
-    "subCategory": "Remote Control Toys"
+    "subCategory": "Remote Control Toys",
+    "createdAt": "2023-11-20T18:50:22.789Z"
   },
   {
     "toyId": "7b8c9d1e2f3a4b5c6d7e8f9a",
@@ -163,10 +175,11 @@
     "price": 320.5,
     "rating": 4.6,
     "availableQuantity": 65,
-    "isPopular": false,
+    "isPopular": true,
     "description": "Set of 4 wooden puzzles with chunky pieces perfect for little hands and developing minds. This educational puzzle set features bright, engaging graphics including alphabet, numbers, animals, and vehicles. Each puzzle has 8-12 extra-thick pieces that are easy for small fingers to grasp and manipulate. The wooden pieces stand up for pretend play after puzzle completion, extending play value. Pictures underneath pieces help guide correct placement, building confidence in early problem-solving. Made from high-quality wood with non-toxic, child-safe paints. The sturdy storage box keeps all pieces organized between uses.",
     "pictureURL": "https://i.ibb.co/M5NXHHfW/Melissa-Doug-Wooden-Puzzles.png",
-    "subCategory": "Puzzles"
+    "subCategory": "Puzzles",
+    "createdAt": "2023-10-08T09:25:33.123Z"
   },
   {
     "toyId": "9d1e2f3a4b5c6d7e8f9a1b2c",
@@ -176,10 +189,11 @@
     "price": 425.0,
     "rating": 4.4,
     "availableQuantity": 55,
-    "isPopular": true,
+    "isPopular": false,
     "description": "Fashion dolls with 7+ surprises to unwrap including accessories and clothing. Each doll comes wrapped in multiple layers that build anticipation as children unwrap to discover what's inside. Includes a fashion doll with removable clothing and brushable hair, plus shoes, accessories, and a collector's guide. The surprise element includes mystery items that could be rare or common, encouraging collection and trading. Some dolls even feature special effects like color-change when dipped in water or tears that turn to glitter. The detailed fashions and accessories reflect current trends, making them highly collectible among fashion-forward kids.",
     "pictureURL": "https://i.ibb.co/MD64N1y0/LOL-Surprise-Dolls.png",
-    "subCategory": "Collectible Toys"
+    "subCategory": "Collectible Toys",
+    "createdAt": "2024-02-25T14:40:18.456Z"
   },
   {
     "toyId": "2f3a4b5c6d7e8f9a1b2c3d4e",
@@ -189,10 +203,11 @@
     "price": 925.99,
     "rating": 4.7,
     "availableQuantity": 15,
-    "isPopular": false,
+    "isPopular": true,
     "description": "Complete wooden kitchen with stove, sink, refrigerator, and pretend food accessories. This realistic kitchen playset features electronic sound effects including sizzling stove, running water, and microwave beeps. The durable wood construction withstands years of imaginative cooking adventures. Includes 25+ accessory pieces: pots, pans, utensils, and pretend food items that store neatly in the cabinet space. The oven door opens and closes, the stove knobs turn, and the refrigerator has adjustable shelves. Encourages social skills through cooperative play and teaches basic cooking concepts in a fun, engaging way.",
     "pictureURL": "https://i.ibb.co/kjF8vhG/Play-Kitchen-Set.png",
-    "subCategory": "Pretend Play"
+    "subCategory": "Pretend Play",
+    "createdAt": "2023-09-10T11:55:44.789Z"
   },
   {
     "toyId": "4b5c6d7e8f9a1b2c3d4e5f6a",
@@ -202,9 +217,10 @@
     "price": 265.0,
     "rating": 4.8,
     "availableQuantity": 0,
-    "isPopular": false,
+    "isPopular": true,
     "description": "Classic 3x3 puzzle cube that challenges problem-solving skills and spatial reasoning. This iconic brain teaser features a smooth, faster-turning mechanism that allows for speedy solving and advanced maneuvers. Each of the six faces covered by nine stickers in solid colors: white, red, blue, orange, green, and yellow. The challenge is to return each face to a single color after thorough mixing. Develops critical thinking, pattern recognition, and persistence. Millions of possible combinations but only one solution makes this one of the world's most popular puzzles. Includes solving guide for beginners to learn basic techniques.",
     "pictureURL": "https://i.ibb.co/sdRVBcXK/Rubik-s-Cube.png",
-    "subCategory": "Brain Teasers"
+    "subCategory": "Brain Teasers",
+    "createdAt": "2023-12-28T16:20:11.234Z"
   }
 ]
