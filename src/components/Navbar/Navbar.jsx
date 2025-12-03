@@ -77,24 +77,39 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <div className="relative group">
-                  <Avatar
-                    src={currentUser.photoURL}
-                    alt={currentUser.displayName}
-                    className={"size-8 md:size-10"}
-                  />
+                <div className="group dropdown dropdown-end">
+                  <div tabIndex={0} role="button" className="cursor-pointer">
+                    <Avatar
+                      src={currentUser.photoURL}
+                      alt={currentUser.displayName}
+                      className={"size-8 md:size-10"}
+                    />
+                  </div>
 
-                  <p
-                    tabIndex={-1}
-                    className="absolute top-14 group-hover:top-12 -right-6 bg-primary-content text-primary text-nowrap px-3 py-1.5 rounded-lg shadow-2xl invisible duration-300 group-hover:visible font-medium"
+                  <ul
+                    tabIndex="-1"
+                    className="dropdown-content menu text-base bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                   >
-                    {currentUser.displayName}
-                  </p>
+                    <div className="px-3 mb-1">
+                      <strong>{currentUser.displayName}</strong>
+                    </div>
+                    <li>
+                      <NavLink
+                        to="/profile"
+                        className={({ isActive }) =>
+                          isActive ? "bg-primary/10" : "hover:bg-primary/10"
+                        }
+                      >
+                        Profile
+                      </NavLink>
+                    </li>
+                    <li className="mt-5 ">
+                      <MyButton handleClick={handleSignOut} className="nav-btn">
+                        SignOut
+                      </MyButton>
+                    </li>
+                  </ul>
                 </div>
-
-                <MyButton handleClick={handleSignOut} className="nav-btn">
-                  SignOut
-                </MyButton>
               </>
             )}
           </div>
