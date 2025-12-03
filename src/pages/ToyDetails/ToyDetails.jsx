@@ -2,16 +2,10 @@ import { useNavigate, useParams } from "react-router";
 import Container from "../../components/Container/Container";
 import { FaStar } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { toast } from "react-toastify";
-import { useState } from "react";
 import useToysData from "../../hooks/useToysData";
 import PopularBadge from "../../components/PopularBadge/PopularBadge";
-import MyButton from "../../components/MyButton/MyButton";
-import Label from "../../components/Label/Label";
-import Input from "../../components/Input/Input";
 
 const ToyDetails = () => {
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { allToys } = useToysData();
   const { id } = useParams();
@@ -32,29 +26,11 @@ const ToyDetails = () => {
 
   const inStock = availableQuantity > 0;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const form = e.currentTarget;
-    const name = form.name.value.trim();
-
-    if (!name) {
-      toast.warn("Invalid Name");
-      setLoading(false);
-      return;
-    }
-
-    setLoading(false);
-    form.reset();
-    toast.success(`Thank you, ${name}! We've received your request`);
-  };
-
   return (
     <>
       <title>{`${toyName} | KidVenture`}</title>
 
-      <section className="mt-10">
+      <section className="py-10 my-6">
         <Container>
           <div className="space-y-7 bg-indigo-100 border-primary-content shadow-lg rounded-xl border-2 p-5">
             <button
@@ -132,29 +108,6 @@ const ToyDetails = () => {
               <p className="text-justify">{description}</p>
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="mb-10 bg-primary/7 py-7">
-        <Container className="grid place-items-center">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 max-w-lg w-full bg-linear-to-r from-primary/15 to-secondary/15 p-5 rounded-lg shadow-lg shadow-indigo-200"
-          >
-            <div className="space-y-1">
-              <Label htmlFor="name">Your Name</Label>
-              <Input type="text" name="name" holder="Enter your full name" />
-            </div>
-
-            <div className="space-y-1">
-              <Label htmlFor="email">Email Address</Label>
-              <Input type="email" name="email" holder="Enter your email" />
-            </div>
-
-            <MyButton disable={loading} className="btn-block mt-6">
-              {loading ? "Please wait..." : "Try Now"}
-            </MyButton>
-          </form>
         </Container>
       </section>
     </>
