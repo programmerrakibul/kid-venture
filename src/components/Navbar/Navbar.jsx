@@ -5,7 +5,6 @@ import getAuthErrorMessage from "../../utilities/getErrorMessage";
 import { toast } from "react-toastify";
 import Avatar from "../Avatar/Avatar";
 import MyButton from "../MyButton/MyButton";
-import { CgProfile } from "react-icons/cg";
 import { IoHomeSharp } from "react-icons/io5";
 import { GiBearFace } from "react-icons/gi";
 import { FaGift } from "react-icons/fa";
@@ -45,7 +44,6 @@ const Navbar = () => {
   const handleSignOut = async () => {
     try {
       await SignOutUser();
-      navigate("/signin");
       toast.success("Successfully signed out!");
     } catch (error) {
       const message = getAuthErrorMessage(error);

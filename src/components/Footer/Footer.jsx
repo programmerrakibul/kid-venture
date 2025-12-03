@@ -12,7 +12,7 @@ const Footer = () => {
     e.preventDefault();
 
     const form = e.currentTarget;
-    const email = form.email.value.toLowerCase().trim();
+    const email = form.footerEmail.value.toLowerCase().trim();
 
     form.reset();
     toast.info(
@@ -102,7 +102,7 @@ const Footer = () => {
               <div className="join">
                 <Input
                   type="email"
-                  name="email"
+                  name="footerEmail"
                   holder="username@site.com"
                   className="join-item"
                 />
