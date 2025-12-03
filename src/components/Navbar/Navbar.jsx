@@ -10,7 +10,7 @@ import { IoHomeSharp } from "react-icons/io5";
 import { GiBearFace } from "react-icons/gi";
 import { FaGift } from "react-icons/fa";
 import Logo from "../Logo/Logo";
-import { FaHeartPulse } from "react-icons/fa6";
+import { FaHeartPulse, FaPaperPlane } from "react-icons/fa6";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
@@ -24,7 +24,8 @@ const Navbar = () => {
       icon: <GiBearFace />,
     },
     { id: 3, name: "Offers", slug: "/offers", icon: <FaGift /> },
-    { id: 4, name: "support", slug: "/support", icon: <FaHeartPulse /> },
+    { id: 4, name: "Support", slug: "/support", icon: <FaHeartPulse /> },
+    { id: 5, name: "Contact", slug: "/contact", icon: <FaPaperPlane /> },
   ];
 
   const navLinks = nav_items.map((item) => (

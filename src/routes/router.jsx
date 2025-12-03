@@ -11,6 +11,7 @@ import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Offers from "../pages/Offers/Offers";
 import Support from "../pages/Support/Support";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "support",
         element: <Support />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "signup",
