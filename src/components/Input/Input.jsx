@@ -4,8 +4,7 @@ const Input = ({
   holder,
   className = "",
   required = true,
-  onChange = undefined,
-  defaultValue = undefined,
+  ...rest
 }) => {
   return (
     <input
@@ -15,8 +14,7 @@ const Input = ({
       className={`input bg-transparent outline-primary/35 border-primary/35 ${className}`}
       placeholder={holder}
       required={required}
-      onChange={onChange}
-      defaultValue={defaultValue}
+      {...rest}
     />
   );
 };

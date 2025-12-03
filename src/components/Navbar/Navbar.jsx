@@ -10,20 +10,21 @@ import { IoHomeSharp } from "react-icons/io5";
 import { GiBearFace } from "react-icons/gi";
 import { FaGift } from "react-icons/fa";
 import Logo from "../Logo/Logo";
+import { FaHeartPulse } from "react-icons/fa6";
 
 const Navbar = () => {
   const { currentUser, SignOutUser } = useAuth();
   const navigate = useNavigate();
   const nav_items = [
     { id: 1, name: "Home", slug: "/", icon: <IoHomeSharp /> },
-    { id: 2, name: "Profile", slug: "/profile", icon: <CgProfile /> },
     {
-      id: 3,
+      id: 2,
       name: "Explore Toys",
       slug: "/explore-toys",
       icon: <GiBearFace />,
     },
-    { id: 4, name: "Offers", slug: "/offers", icon: <FaGift /> },
+    { id: 3, name: "Offers", slug: "/offers", icon: <FaGift /> },
+    { id: 4, name: "support", slug: "/support", icon: <FaHeartPulse /> },
   ];
 
   const navLinks = nav_items.map((item) => (

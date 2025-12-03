@@ -10,6 +10,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Offers from "../pages/Offers/Offers";
+import Support from "../pages/Support/Support";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "offers",
         element: <Offers />,
+      },
+      {
+        path: "support",
+        element: <Support />,
       },
       {
         path: "signup",
