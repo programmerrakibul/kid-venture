@@ -3,8 +3,23 @@ import Container from "../Container/Container";
 import { SiFacebook, SiGithub, SiLinkedin } from "react-icons/si";
 import { IoLogoTwitter } from "react-icons/io";
 import Logo from "../Logo/Logo";
+import Label from "../Label/Label";
+import Input from "../Input/Input";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+  const handleNewsletter = (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const email = form.email.value.toLowerCase().trim();
+
+    form.reset();
+    toast.info(
+      `You've successfully subscribed to our newsletter. We'll send emails to ${email}`
+    );
+  };
+
   return (
     <footer className="bg-primary/25 py-10 mb-11 md:mb-0">
       <Container className="space-y-3.5">
@@ -20,22 +35,21 @@ const Footer = () => {
           </aside>
 
           <nav>
-            <h6 className="footer-title text-neutral font-bold opacity-100">
-              Services
-            </h6>
-            <Link className="footer-link">Branding</Link>
-            <Link className="footer-link">Design</Link>
-            <Link className="footer-link">Marketing</Link>
-            <Link className="footer-link">Advertisement</Link>
-          </nav>
-
-          <nav>
-            <h6 className="footer-title text-neutral font-bold opacity-100">
-              Legal
-            </h6>
-            <Link className="footer-link">Terms & Conditions</Link>
-            <Link className="footer-link">Privacy Policy</Link>
-            <Link className="footer-link">Cookie Policy</Link>
+            <Link to="/" className="footer-link">
+              Home
+            </Link>
+            <Link to="/explore-toys" className="footer-link">
+              Explore Toys
+            </Link>
+            <Link to="/offers" className="footer-link">
+              Offers
+            </Link>
+            <Link to="/support" className="footer-link">
+              Support
+            </Link>
+            <Link to="/contact" className="footer-link">
+              Contact
+            </Link>
           </nav>
 
           <nav>
@@ -78,6 +92,24 @@ const Footer = () => {
               <SiLinkedin className="footer-social-icon" /> Linkedin
             </Link>
           </nav>
+
+          <form onSubmit={handleNewsletter}>
+            <h6 className="footer-title text-neutral font-bold opacity-100">
+              Newsletter
+            </h6>
+            <fieldset className="w-80 space-y-1.5">
+              <Label>Enter your email address</Label>
+              <div className="join">
+                <Input
+                  type="email"
+                  name="email"
+                  holder="username@site.com"
+                  className="join-item"
+                />
+                <button className="btn btn-primary join-item">Subscribe</button>
+              </div>
+            </fieldset>
+          </form>
         </div>
 
         <div className="pt-3.5 border-t-2 border-t-primary/13">
